@@ -407,26 +407,6 @@ const handleSignUp = () => {
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
-              name="i-lucide-bell"
-              class="text-primary"
-            /> Communicating System Status
-          </h4>
-          <p class="text-sm text-muted mb-3">
-            The system should always provide feedback on what is happening and what went wrong. Utilize loading icons, loading bars, and skeletons.
-          </p>
-          <UButton
-            loading
-            label="Saving..."
-            color="primary"
-          />
-        </UCard>
-
-        <UCard
-          variant="subtle"
-          class="h-full"
-        >
-          <h4 class="font-bold mb-2 flex items-center gap-2">
-            <UIcon
               name="i-lucide-bell-ring"
               class="text-primary"
             /> Alerts & Notifications
@@ -435,11 +415,11 @@ const handleSignUp = () => {
             Use top-right <strong>Toast Notifications</strong> exclusively for temporary success states or transient feedback. Use inline <strong>Alerts</strong> (using the <code>outline</code> variant) for persistent, page-level issues or warnings that require user resolution.
           </p>
           <UAlert
-            title="Action Required"
-            description="Please review the changes before continuing."
+            title="Some information"
+            description="This is an informational alert."
             variant="outline"
-            color="warning"
-            icon="i-lucide-alert-triangle"
+            color="info"
+            icon="i-lucide-info"
           />
         </UCard>
 
