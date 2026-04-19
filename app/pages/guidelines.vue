@@ -33,7 +33,7 @@
       </div>
     </section>
 
-    <GuidelinesContent />
+    <GuidelinesFormatting />
     <GuidelinesTechnology />
     <GuidelinesNaming />
   </div>
