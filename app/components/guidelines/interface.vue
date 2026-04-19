@@ -262,11 +262,30 @@
           <p class="text-sm text-muted mb-4">
             Always require explicit confirmation dialogs for deletions or irreversible actions. Destructive buttons must use the <code class="bg-muted/20 px-1 py-0.5 rounded">error</code> color variant to signal danger and must never be the default focused element when a view renders.
           </p>
-          <UButton
-            label="Delete Account"
-            color="error"
-            icon="i-lucide-trash-2"
-          />
+          <UModal
+            title="Delete Account"
+            description="Are you absolutely sure? This action cannot be undone and will permanently delete your account data."
+          >
+            <UButton
+              label="Delete Account"
+              color="error"
+              variant="outline"
+              icon="i-lucide-trash-2"
+            />
+            <template #footer>
+              <div class="flex justify-end gap-2 w-full">
+                <UButton
+                  label="Cancel"
+                  color="neutral"
+                  variant="ghost"
+                />
+                <UButton
+                  label="Confirm Deletion"
+                  color="error"
+                />
+              </div>
+            </template>
+          </UModal>
         </UCard>
 
         <UCard
