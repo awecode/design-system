@@ -80,7 +80,7 @@ watch(() => route.hash, (newHash) => {
       </p>
     </div>
 
-    <UPageSection>
+    <div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <!-- Example cards grid -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         <button
@@ -135,6 +135,6 @@ watch(() => route.hash, (newHash) => {
           Click an example above to preview it
         </p>
       </div>
-    </UPageSection>
+    </div>
   </div>
 </template>
