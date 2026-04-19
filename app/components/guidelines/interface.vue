@@ -100,9 +100,42 @@
             />
             Modals vs. Slide-overs
           </h4>
-          <p class="text-sm text-muted">
+          <p class="text-sm text-muted mb-4">
             Use modals exclusively for quick confirmations or simple inputs that block the immediate flow. Use slide-overs (drawers) for complex forms, deep detail views, or tasks that require referencing data from the underlying background page.
           </p>
+          <div class="flex flex-wrap gap-2">
+            <UModal
+              title="Modal Example"
+              description="This is a simple modal dialog."
+            >
+              <UButton
+                label="Open Modal"
+                color="neutral"
+                variant="outline"
+              />
+              <template #body>
+                <p class="text-sm text-muted">
+                  Modal content goes here. Use it for quick confirmations or simple inputs.
+                </p>
+              </template>
+            </UModal>
+
+            <USlideover
+              title="Slideover Example"
+              description="This is a side drawer."
+            >
+              <UButton
+                label="Open Slideover"
+                color="neutral"
+                variant="outline"
+              />
+              <template #body>
+                <p class="text-sm text-muted">
+                  Slideover content goes here. Use it for deep detail views or complex forms.
+                </p>
+              </template>
+            </USlideover>
+          </div>
         </UCard>
 
         <UCard
@@ -134,20 +167,12 @@
           <p class="text-sm text-muted mb-3">
             For elements that toggle states, use the down chevron when it is collapsed, and the up chevron when it is expanded.
           </p>
-          <div class="flex gap-2">
-            <UButton
-              icon="i-lucide-chevron-down"
-              label="Collapsed"
-              color="neutral"
-              variant="outline"
-            />
-            <UButton
-              icon="i-lucide-chevron-up"
-              label="Expanded"
-              color="neutral"
-              variant="outline"
-            />
-          </div>
+          <UAccordion
+            :items="[{ label: 'Toggle Details', content: 'Here is the expanded content demonstrating the automatic chevron toggle.' }]"
+            size="sm"
+            color="neutral"
+            variant="outline"
+          />
         </UCard>
 
         <UCard
@@ -234,9 +259,14 @@
             />
             Destructive Actions
           </h4>
-          <p class="text-sm text-muted">
+          <p class="text-sm text-muted mb-4">
             Always require explicit confirmation dialogs for deletions or irreversible actions. Destructive buttons must use the <code class="bg-muted/20 px-1 py-0.5 rounded">error</code> color variant to signal danger and must never be the default focused element when a view renders.
           </p>
+          <UButton
+            label="Delete Account"
+            color="error"
+            icon="i-lucide-trash-2"
+          />
         </UCard>
 
         <UCard
@@ -279,11 +309,27 @@
               class="text-primary"
             /> Form Submissions
           </h4>
-          <ul class="text-sm text-muted space-y-2 list-disc list-inside">
+          <ul class="text-sm text-muted space-y-2 list-disc list-inside mb-4">
             <li>Submit buttons should be <strong>disabled</strong> if validation is failing and the user is already provided with a validation error.</li>
             <li>Upon submission, the submit button should be disabled and form submission should be prevented unless completed through a button click or carriage return.</li>
             <li>Submit buttons should show a loading spinner and present a continuous verb inside the button (e.g. <em>"Saving..."</em>).</li>
           </ul>
+          <div class="flex flex-wrap gap-4 items-center p-4 border border-dashed border-default rounded-lg bg-background/50">
+            <UButton
+              label="Save Changes"
+              color="primary"
+            />
+            <UButton
+              label="Save Changes"
+              color="primary"
+              disabled
+            />
+            <UButton
+              label="Saving..."
+              color="primary"
+              loading
+            />
+          </div>
         </UCard>
       </div>
     </section>
@@ -347,9 +393,28 @@
             />
             Empty States
           </h4>
-          <p class="text-sm text-muted">
+          <p class="text-sm text-muted mb-4">
             When a table or list has no data, never leave it completely blank. Always include a relevant icon or illustration, a concise helpful message explaining the empty state, and a clear call-to-action (CTA) to help the user create their first item.
           </p>
+          <div class="text-center py-6 px-4 border border-dashed border-default rounded-lg bg-background/50">
+            <UIcon
+              name="i-lucide-folder-open"
+              class="size-8 mx-auto text-muted/50 mb-2"
+            />
+            <h5 class="text-sm font-bold text-default mb-1">
+              No documents
+            </h5>
+            <p class="text-xs text-muted mb-4">
+              Create your first document to get started.
+            </p>
+            <UButton
+              icon="i-lucide-plus"
+              label="New Document"
+              size="xs"
+              color="neutral"
+              variant="outline"
+            />
+          </div>
         </UCard>
 
         <UCard
