@@ -31,7 +31,10 @@ useSeoMeta({
           <AppLogo class="w-auto h-6 shrink-0" />
         </NuxtLink>
 
-        <USeparator orientation="vertical" class="h-6 mx-2" />
+        <USeparator
+          orientation="vertical"
+          class="h-6 mx-2"
+        />
 
         <span class="text-sm font-medium text-muted">Design System</span>
       </template>

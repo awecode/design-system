@@ -98,10 +98,16 @@ watch(() => route.hash, (newHash) => {
       </div>
 
       <!-- Active component preview -->
-      <div v-if="activeComponent" class="mt-8">
+      <div
+        v-if="activeComponent"
+        class="mt-8"
+      >
         <div class="flex items-center justify-between mb-4">
           <div class="flex items-center gap-2">
-            <UIcon :name="activeExample?.icon || 'i-lucide-component'" class="size-5 text-primary" />
+            <UIcon
+              :name="activeExample?.icon || 'i-lucide-component'"
+              class="size-5 text-primary"
+            />
             <h2 class="text-lg font-semibold text-default">
               {{ activeExample?.label }}
             </h2>
@@ -124,9 +130,17 @@ watch(() => route.hash, (newHash) => {
       </div>
 
       <!-- Empty state -->
-      <div v-else class="mt-8 text-center py-16 text-muted">
-        <UIcon name="i-lucide-mouse-pointer-click" class="size-8 mx-auto mb-3 opacity-50" />
-        <p class="text-sm">Click an example above to preview it</p>
+      <div
+        v-else
+        class="mt-8 text-center py-16 text-muted"
+      >
+        <UIcon
+          name="i-lucide-mouse-pointer-click"
+          class="size-8 mx-auto mb-3 opacity-50"
+        />
+        <p class="text-sm">
+          Click an example above to preview it
+        </p>
       </div>
     </UPageSection>
   </div>
