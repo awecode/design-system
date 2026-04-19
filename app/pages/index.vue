@@ -7,17 +7,42 @@
       <p class="mt-4 text-xl text-muted max-w-3xl mx-auto">
         The single source of truth for building consistent, beautiful digital experiences at Awecode. Guidelines, components, brand assets, and best practices — all in one place.
       </p>
-      <div class="mt-8 flex justify-center gap-4">
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
         <UButton
-          to="/guidelines"
-          label="Explore Guidelines"
+          to="/skills"
+          label="Skills"
           trailing-icon="i-lucide-arrow-right"
           size="lg"
+        />
+        <UButton
+          to="/examples"
+          label="Examples"
+          icon="i-lucide-layers"
+          size="lg"
+          color="neutral"
+          variant="outline"
         />
         <UButton
           to="/config"
           label="Configuration"
           icon="i-lucide-settings"
+          size="lg"
+          color="neutral"
+          variant="outline"
+        />
+        <UButton
+          to="/guidelines"
+          label="Guidelines"
+          icon="i-lucide-book-open"
+          size="lg"
+          color="neutral"
+          variant="outline"
+        />
+        <UButton
+          to="https://awecode.com/brand-guidelines"
+          target="_blank"
+          label="Brand Assets"
+          icon="i-lucide-external-link"
           size="lg"
           color="neutral"
           variant="outline"
