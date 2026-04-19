@@ -44,136 +44,134 @@ const state = reactive<Partial<Schema>>({
 </script>
 
 <template>
-  <div class="min-h-screen p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
-    <UCard
-      class="max-w-md mx-auto"
-      variant="subtle"
+  <UCard
+    class="max-w-md mx-auto w-full my-8"
+    variant="subtle"
+  >
+    <UForm
+      :schema="schema"
+      :state="state"
+      class="space-y-6"
     >
-      <UForm
-        :schema="schema"
-        :state="state"
-        class="space-y-6"
+      <UPageCard
+        title="Payment method"
+        description="All transactions are secure and encrypted"
+        variant="naked"
+      />
+
+      <UFormField
+        name="name"
+        label="Name"
+        required
       >
-        <UPageCard
-          title="Payment method"
-          description="All transactions are secure and encrypted"
-          variant="naked"
+        <UInput
+          v-model="state.name"
+          placeholder="John Doe"
+          class="w-full"
         />
+      </UFormField>
+
+      <div class="grid grid-cols-3 gap-4">
+        <UFormField
+          name="cardNumber"
+          label="Card number"
+          help="Enter your 16-digit number."
+          required
+          class="col-span-2"
+        >
+          <UInput
+            v-model="state.cardNumber"
+            placeholder="1234 5678 9012 3456"
+            class="w-full"
+          />
+        </UFormField>
 
         <UFormField
-          name="name"
-          label="Name"
+          name="cvv"
+          label="CVV"
           required
         >
           <UInput
-            v-model="state.name"
-            placeholder="John Doe"
+            v-model="state.cvv"
+            placeholder="123"
             class="w-full"
           />
         </UFormField>
+      </div>
 
-        <div class="grid grid-cols-3 gap-4">
-          <UFormField
-            name="cardNumber"
-            label="Card number"
-            help="Enter your 16-digit number."
-            required
-            class="col-span-2"
-          >
-            <UInput
-              v-model="state.cardNumber"
-              placeholder="1234 5678 9012 3456"
-              class="w-full"
-            />
-          </UFormField>
-
-          <UFormField
-            name="cvv"
-            label="CVV"
-            required
-          >
-            <UInput
-              v-model="state.cvv"
-              placeholder="123"
-              class="w-full"
-            />
-          </UFormField>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4">
-          <UFormField
-            name="month"
-            label="Month"
-            required
-          >
-            <USelect
-              v-model="state.month"
-              :items="months"
-              placeholder="MM"
-              value-key="value"
-              class="w-full"
-            />
-          </UFormField>
-
-          <UFormField
-            name="year"
-            label="Year"
-            required
-          >
-            <USelect
-              v-model="state.year"
-              :items="years"
-              placeholder="YYYY"
-              value-key="value"
-              class="w-full"
-            />
-          </UFormField>
-        </div>
-
-        <USeparator />
-
-        <UPageCard
-          title="Billing address"
-          description="The billing address associated with your payment method"
-          variant="naked"
-        />
-
-        <UFormField name="sameAsShipping">
-          <UCheckbox
-            v-model="state.sameAsShipping"
-            label="Same as shipping address"
-            color="neutral"
+      <div class="grid grid-cols-2 gap-4">
+        <UFormField
+          name="month"
+          label="Month"
+          required
+        >
+          <USelect
+            v-model="state.month"
+            :items="months"
+            placeholder="MM"
+            value-key="value"
+            class="w-full"
           />
         </UFormField>
-
-        <USeparator />
 
         <UFormField
-          name="comments"
-          label="Comments"
+          name="year"
+          label="Year"
+          required
         >
-          <UTextarea
-            v-model="state.comments"
-            placeholder="Add any additional comments"
-            :rows="3"
+          <USelect
+            v-model="state.year"
+            :items="years"
+            placeholder="YYYY"
+            value-key="value"
             class="w-full"
           />
         </UFormField>
+      </div>
 
-        <div class="flex gap-3">
-          <UButton
-            type="submit"
-            color="neutral"
-            label="Submit"
-          />
-          <UButton
-            type="button"
-            label="Cancel"
-            color="neutral"
-            variant="outline"
-          />
-        </div>
-      </UForm>
-    </UCard>
-  </div>
+      <USeparator />
+
+      <UPageCard
+        title="Billing address"
+        description="The billing address associated with your payment method"
+        variant="naked"
+      />
+
+      <UFormField name="sameAsShipping">
+        <UCheckbox
+          v-model="state.sameAsShipping"
+          label="Same as shipping address"
+          color="neutral"
+        />
+      </UFormField>
+
+      <USeparator />
+
+      <UFormField
+        name="comments"
+        label="Comments"
+      >
+        <UTextarea
+          v-model="state.comments"
+          placeholder="Add any additional comments"
+          :rows="3"
+          class="w-full"
+        />
+      </UFormField>
+
+      <div class="flex gap-3">
+        <UButton
+          type="submit"
+          color="neutral"
+          label="Submit"
+        />
+        <UButton
+          type="button"
+          label="Cancel"
+          color="neutral"
+          variant="outline"
+        />
+      </div>
+    </UForm>
+  </UCard>
 </template>

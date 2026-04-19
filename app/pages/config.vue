@@ -69,8 +69,12 @@ function copyToClipboard(text) {
 
 <template>
   <div class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-    <h1 class="text-3xl font-bold tracking-tight text-default sm:text-4xl mb-2">Configuration</h1>
-    <p class="text-lg text-muted mb-8">Copy these configuration files to use the Awecode design system in your Nuxt project.</p>
+    <h1 class="text-3xl font-bold tracking-tight text-default sm:text-4xl mb-2">
+      Configuration
+    </h1>
+    <p class="text-lg text-muted mb-8">
+      Copy these configuration files to use the Awecode design system in your Nuxt project.
+    </p>
 
     <div class="space-y-8">
       <!-- main.css Configuration -->
