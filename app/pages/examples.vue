@@ -28,6 +28,13 @@ function clearSelection() {
   router.replace({ hash: '' })
 }
 
+const isModalOpen = computed({
+  get: () => !!activeId.value,
+  set: (val) => {
+    if (!val) clearSelection()
+  }
+})
+
 // Resolve the dynamic component via async import
 const activeComponent = computed(() => {
   if (!activeId.value) return null
@@ -98,42 +105,24 @@ watch(() => route.hash, (newHash) => {
       </div>
 
       <!-- Active component preview -->
-      <div
-        v-if="activeComponent"
-        class="mt-8"
+      <UModal
+        v-model:open="isModalOpen"
+        :title="activeExample?.label"
+        :description="activeExample?.description"
+        :ui="{ content: 'sm:max-w-full' }"
       >
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex items-center gap-2">
-            <UIcon
-              :name="activeExample?.icon || 'i-lucide-component'"
-              class="size-5 text-primary"
-            />
-            <h2 class="text-lg font-semibold text-default">
-              {{ activeExample?.label }}
-            </h2>
+        <template #body>
+          <div
+            v-if="activeComponent"
+            class="rounded-lg border border-default bg-elevated overflow-hidden"
+          >
+            <component :is="activeComponent" />
           </div>
-          <UButton
-            icon="i-lucide-x"
-            color="neutral"
-            variant="ghost"
-            size="sm"
-            aria-label="Close preview"
-            @click="clearSelection"
-          />
-        </div>
+        </template>
+      </UModal>
 
-        <USeparator class="mb-6" />
-
-        <div class="rounded-lg border border-default bg-elevated overflow-hidden">
-          <component :is="activeComponent" />
-        </div>
-      </div>
-
-      <!-- Empty state -->
-      <div
-        v-else
-        class="mt-8 text-center py-16 text-muted"
-      >
+      <!-- Helper text -->
+      <div class="mt-8 text-center py-16 text-muted">
         <UIcon
           name="i-lucide-mouse-pointer-click"
           class="size-8 mx-auto mb-3 opacity-50"
