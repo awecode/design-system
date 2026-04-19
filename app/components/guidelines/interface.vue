@@ -274,6 +274,78 @@
       </div>
     </section>
 
+    <!-- Complex UI Patterns -->
+    <section>
+      <h3 class="text-xl font-bold text-default mb-4">
+        Complex UI Patterns
+      </h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <UCard
+          variant="outline"
+          class="bg-elevated/50"
+        >
+          <h4 class="font-bold mb-2 flex items-center gap-2">
+            <UIcon
+              name="i-lucide-panel-right-open"
+              class="text-primary size-5"
+            />
+            Modals vs. Slide-overs
+          </h4>
+          <p class="text-sm text-muted">
+            Use modals exclusively for quick confirmations or simple inputs that block the immediate flow. Use slide-overs (drawers) for complex forms, deep detail views, or tasks that require referencing data from the underlying background page.
+          </p>
+        </UCard>
+
+        <UCard
+          variant="outline"
+          class="bg-elevated/50"
+        >
+          <h4 class="font-bold mb-2 flex items-center gap-2">
+            <UIcon
+              name="i-lucide-trash-2"
+              class="text-primary size-5"
+            />
+            Destructive Actions
+          </h4>
+          <p class="text-sm text-muted">
+            Always require explicit confirmation dialogs for deletions or irreversible actions. Destructive buttons must use the <code class="bg-muted/20 px-1 py-0.5 rounded">error</code> color variant to signal danger and must never be the default focused element when a view renders.
+          </p>
+        </UCard>
+
+        <UCard
+          variant="outline"
+          class="bg-elevated/50"
+        >
+          <h4 class="font-bold mb-2 flex items-center gap-2">
+            <UIcon
+              name="i-lucide-list-ordered"
+              class="text-primary size-5"
+            />
+            Pagination vs. Infinite Scroll
+          </h4>
+          <p class="text-sm text-muted">
+            Implement traditional pagination for data tables where users need to skip to specific pages or reference exact locations. Reserve infinite scroll for feed-like interfaces or continuous discovery streams where exact positioning is irrelevant.
+          </p>
+        </UCard>
+
+        <UCard
+          variant="outline"
+          class="bg-elevated/50"
+        >
+          <h4 class="font-bold mb-2 flex items-center gap-2">
+            <UIcon
+              name="i-lucide-more-horizontal"
+              class="text-primary size-5"
+            />
+            Text Truncation
+          </h4>
+          <p class="text-sm text-muted">
+            When handling long text in constrained spaces (like table cells or small cards), use a single-line text ellipsis paired with a tooltip to reveal the full content on hover. Wrap text to the next line only in dedicated detail views or expansive prose areas.
+          </p>
+        </UCard>
+      </div>
+    </section>
+
     <!-- Forms & Interactions -->
     <section>
       <h3 class="text-xl font-bold text-default mb-4">
