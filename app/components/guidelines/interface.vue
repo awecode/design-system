@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const isDeleteModalOpen = ref(false)
+</script>
+
 <template>
   <div class="space-y-12">
     <!-- 1. Layout & Structural Foundations -->
@@ -263,6 +267,7 @@
             Always require explicit confirmation dialogs for deletions or irreversible actions. Destructive buttons must use the <code class="bg-muted/20 px-1 py-0.5 rounded">error</code> color variant to signal danger and must never be the default focused element when a view renders.
           </p>
           <UModal
+            v-model:open="isDeleteModalOpen"
             title="Delete Account"
             description="Are you absolutely sure? This action cannot be undone and will permanently delete your account data."
           >
@@ -278,10 +283,12 @@
                   label="Cancel"
                   color="neutral"
                   variant="ghost"
+                  @click="isDeleteModalOpen = false"
                 />
                 <UButton
                   label="Confirm Deletion"
                   color="error"
+                  @click="isDeleteModalOpen = false"
                 />
               </div>
             </template>
