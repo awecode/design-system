@@ -1,23 +1,29 @@
 <template>
   <div>
-    <UPageHero
-      title="Awecode Design System"
-      description="The single source of truth for building consistent, beautiful digital experiences at Awecode. Guidelines, components, brand assets, and best practices — all in one place."
-      :links="[{
-        label: 'Explore Guidelines',
-        to: '/guidelines',
-        trailingIcon: 'i-lucide-arrow-right',
-        size: 'xl'
-      }, {
-        label: 'Brand Assets',
-        to: 'https://awecode.com/brand-guidelines',
-        target: '_blank',
-        icon: 'i-lucide-download',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle'
-      }]"
-    />
+    <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+      <h1 class="text-4xl font-bold tracking-tight text-default sm:text-5xl">
+        Awecode Design System
+      </h1>
+      <p class="mt-4 text-xl text-muted max-w-3xl mx-auto">
+        The single source of truth for building consistent, beautiful digital experiences at Awecode. Guidelines, components, brand assets, and best practices — all in one place.
+      </p>
+      <div class="mt-8 flex justify-center gap-4">
+        <UButton
+          to="/guidelines"
+          label="Explore Guidelines"
+          trailing-icon="i-lucide-arrow-right"
+          size="lg"
+        />
+        <UButton
+          to="/config"
+          label="Configuration"
+          icon="i-lucide-settings"
+          size="lg"
+          color="neutral"
+          variant="outline"
+        />
+      </div>
+    </div>
 
     <UPageSection
       id="foundations"

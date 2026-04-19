@@ -71,10 +71,14 @@ watch(() => route.hash, (newHash) => {
 
 <template>
   <div>
-    <UPageHero
-      title="Examples"
-      description="Interactive component examples built with Nuxt UI. Click any card to view the live component."
-    />
+    <div class="pt-12 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <h1 class="text-3xl font-bold text-default">
+        Examples
+      </h1>
+      <p class="mt-2 text-lg text-muted">
+        Interactive component examples built with Nuxt UI. Click any card to view the live component.
+      </p>
+    </div>
 
     <UPageSection>
       <!-- Example cards grid -->
@@ -114,7 +118,7 @@ watch(() => route.hash, (newHash) => {
         <template #body>
           <div
             v-if="activeComponent"
-            class="rounded-lg border border-default bg-elevated overflow-hidden"
+            class="sm:rounded-lg overflow-hidden flex justify-center"
           >
             <component :is="activeComponent" />
           </div>

@@ -21,6 +21,13 @@ useSeoMeta({
   ogDescription: description,
   twitterCard: 'summary_large_image'
 })
+
+const navLinks = [
+  { label: 'Guidelines', to: '/guidelines' },
+  { label: 'Examples', to: '/examples' },
+  { label: 'Configuration', to: '/config' },
+  { label: 'Components', to: 'https://ui.nuxt.com/docs/components', target: '_blank', trailingIcon: 'i-lucide-external-link' }
+]
 </script>
 
 <template>
@@ -36,14 +43,18 @@ useSeoMeta({
           class="h-6 mx-2"
         />
 
-        <span class="text-sm font-medium text-muted">Design System</span>
+        <span class="text-sm font-medium text-muted hidden sm:inline-block">Design System</span>
+      </template>
+
+      <template #center>
+        <UNavigationMenu :items="navLinks" />
       </template>
 
       <template #right>
         <UColorModeButton />
 
         <UButton
-          to="https://github.com/AwecodeSoft"
+          to="https://github.com/awecode/design-system"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
@@ -59,6 +70,7 @@ useSeoMeta({
           variant="ghost"
           trailing-icon="i-lucide-external-link"
           size="sm"
+          class="hidden sm:inline-flex"
         />
       </template>
     </UHeader>
@@ -72,7 +84,22 @@ useSeoMeta({
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          © {{ new Date().getFullYear() }} Awecode • Kathmandu, Nepal
+          © {{ new Date().getFullYear() }} Awecode
+        </p>
+      </template>
+
+      <template #center>
+        <p class="text-sm text-muted">
+          Built with
+          <UButton
+            to="https://ui.nuxt.com"
+            target="_blank"
+            variant="link"
+            :padded="false"
+            color="primary"
+          >
+            Nuxt UI
+          </UButton>
         </p>
       </template>
 
@@ -86,7 +113,7 @@ useSeoMeta({
           size="sm"
         />
         <UButton
-          to="https://github.com/AwecodeSoft"
+          to="https://github.com/awecode/design-system"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
