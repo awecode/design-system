@@ -1,5 +1,23 @@
 <script setup lang="ts">
 const isDeleteModalOpen = ref(false)
+const isAgreed = ref(false)
+const isSigningUp = ref(false)
+const toast = useToast()
+
+const handleSignUp = () => {
+  if (!isAgreed.value || isSigningUp.value) return
+  isSigningUp.value = true
+  setTimeout(() => {
+    isSigningUp.value = false
+    isAgreed.value = false
+    toast.add({
+      title: 'Congratulations!',
+      description: 'You have signed up.',
+      color: 'success',
+      icon: 'i-lucide-check-circle'
+    })
+  }, 2000)
+}
 </script>
 
 <template>
@@ -340,22 +358,39 @@ const isDeleteModalOpen = ref(false)
             <li>Upon submission, the submit button should be disabled and form submission should be prevented unless completed through a button click or carriage return.</li>
             <li>Submit buttons should show a loading spinner and present a continuous verb inside the button (e.g. <em>"Saving..."</em>).</li>
           </ul>
-          <div class="flex flex-wrap gap-4 items-center p-4 border border-dashed border-default rounded-lg bg-background/50">
-            <UButton
-              label="Save Changes"
-              color="primary"
+          <form
+            class="flex flex-col gap-4 p-4 border border-dashed border-default rounded-lg bg-background/50"
+            @submit.prevent="handleSignUp"
+          >
+            <UCheckbox
+              v-model="isAgreed"
+              name="agreement"
+              label="I agree"
             />
-            <UButton
-              label="Save Changes"
-              color="primary"
-              disabled
-            />
-            <UButton
-              label="Saving..."
-              color="primary"
-              loading
-            />
-          </div>
+            <div>
+              <UTooltip
+                v-if="!isAgreed"
+                text="You must agree to sign up."
+              >
+                <div class="inline-block cursor-not-allowed">
+                  <UButton
+                    type="submit"
+                    disabled
+                    color="primary"
+                    :label="isSigningUp ? 'Signing Up...' : 'Sign Up'"
+                    class="pointer-events-none"
+                  />
+                </div>
+              </UTooltip>
+              <UButton
+                v-else
+                type="submit"
+                :loading="isSigningUp"
+                color="primary"
+                :label="isSigningUp ? 'Signing Up...' : 'Sign Up'"
+              />
+            </div>
+          </form>
         </UCard>
       </div>
     </section>
