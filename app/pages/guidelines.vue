@@ -14,6 +14,8 @@
       </p>
     </div>
 
+    <GuidelinesCore />
+
     <!-- Technology Stack -->
     <section>
       <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 text-default border-b border-default pb-4">
@@ -437,7 +439,7 @@
                 /> Search & Debounce
               </h4>
               <p class="text-sm text-muted">
-                Use a debounce value of exactly <strong>250ms</strong> for querying server-side data from typing fields to optimize API requests.
+                Use a <strong>250 ms</strong> debounce when querying server-side data from input fields to reduce unnecessary API calls and improve performance.
               </p>
             </UCard>
 
