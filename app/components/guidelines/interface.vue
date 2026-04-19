@@ -19,7 +19,7 @@
             Spacing Scale
           </h4>
           <p class="text-sm text-muted">
-            Mandate the use of the <strong>4px/8px</strong> grid system (Tailwind's default). Use consistent even-numbered gaps like <code class="bg-muted/20 px-1 py-0.5 rounded">gap-4</code> (16px) or <code class="bg-muted/20 px-1 py-0.5 rounded">gap-6</code> (24px) for component spacing. Avoid odd numbers to maintain visual rhythm.
+            All layouts use the <strong>4px/8px</strong> grid system (Tailwind's default). Maintain visual rhythm by using consistent even-numbered gaps like <code class="bg-muted/20 px-1 py-0.5 rounded">gap-4</code> (16px) or <code class="bg-muted/20 px-1 py-0.5 rounded">gap-6</code> (24px) for component spacing. This 4px multiplier strictly applies to internal padding (<code class="bg-muted/20 px-1 py-0.5 rounded">p-*</code>) and external margins (<code class="bg-muted/20 px-1 py-0.5 rounded">m-*</code>) as well. Avoid odd numbers.
           </p>
         </UCard>
 
@@ -36,7 +36,7 @@
             Z-Index Hierarchy
           </h4>
           <p class="text-sm text-muted mb-3">
-            Adhere to a standardized z-index scale to prevent overlapping bugs across the application:
+            The following standardized z-index scale is strictly enforced to prevent overlapping components and visual bugs:
           </p>
           <ul class="text-sm text-muted space-y-2 list-none">
             <li class="flex items-center gap-2">
@@ -67,7 +67,7 @@
             Max Widths
           </h4>
           <p class="text-sm text-muted mb-3">
-            Standardize container widths depending on the content context:
+            Use the following standardized container widths based on the content context:
           </p>
           <ul class="text-sm text-muted space-y-3 list-none">
             <li>
@@ -215,6 +215,62 @@
             />
           </UCard>
         </div>
+      </div>
+    </section>
+
+    <!-- Empty States & Error Handling -->
+    <section>
+      <h3 class="text-xl font-bold text-default mb-4">
+        Empty States & Error Handling
+      </h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <UCard
+          variant="outline"
+          class="bg-elevated/50"
+        >
+          <h4 class="font-bold mb-2 flex items-center gap-2">
+            <UIcon
+              name="i-lucide-layout-list"
+              class="text-primary size-5"
+            />
+            Empty States
+          </h4>
+          <p class="text-sm text-muted">
+            When a table or list has no data, never leave it completely blank. Always include a relevant icon or illustration, a concise helpful message explaining the empty state, and a clear call-to-action (CTA) to help the user create their first item.
+          </p>
+        </UCard>
+
+        <UCard
+          variant="outline"
+          class="bg-elevated/50"
+        >
+          <h4 class="font-bold mb-2 flex items-center gap-2">
+            <UIcon
+              name="i-lucide-bell-ring"
+              class="text-primary size-5"
+            />
+            Toasts vs. Alerts
+          </h4>
+          <p class="text-sm text-muted">
+            Use top-right <strong>Toast Notifications</strong> exclusively for temporary success states or transient feedback. Use inline <strong>Alerts</strong> for persistent, page-level issues or warnings that require user resolution before proceeding.
+          </p>
+        </UCard>
+
+        <UCard
+          variant="outline"
+          class="bg-elevated/50"
+        >
+          <h4 class="font-bold mb-2 flex items-center gap-2">
+            <UIcon
+              name="i-lucide-server-crash"
+              class="text-primary size-5"
+            />
+            404 & 500 Pages
+          </h4>
+          <p class="text-sm text-muted">
+            Dead ends and server errors should stay friendly and helpful. Clearly explain what went wrong without exposing technical details, and always include a prominent action that takes users back to the Dashboard or Homepage. For example, 404 pages can intelligently extract segments or slugs from the broken URL and enable searching for it.
+          </p>
+        </UCard>
       </div>
     </section>
 
