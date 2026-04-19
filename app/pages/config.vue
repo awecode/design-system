@@ -36,7 +36,7 @@ const cssContent = `@import "tailwindcss";
 
 /* Nuxt UI CSS variable overrides */
 :root {
-  --ui-radius: 0.5rem;
+  --ui-radius: 0.2rem;
 
   /* Shadow overrides matching the tweakcn config */
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);

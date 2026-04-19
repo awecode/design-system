@@ -1,7 +1,7 @@
 <template>
   <!-- Core Visual Identity -->
   <section>
-    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 text-default border-b border-default pb-4">
+    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 text-default">
       <UIcon
         name="i-lucide-palette"
         class="size-6 text-primary"
@@ -92,7 +92,7 @@
           Border Radii
         </h3>
         <p class="text-sm text-muted">
-          We utilize a constrained border-radius scale to maintain a professional yet approachable aesthetic. Our global default is set to <code class="bg-muted/20 px-1 py-0.5 rounded">0.5rem</code> (8px) via the <code class="bg-muted/20 px-1 py-0.5 rounded">--ui-radius</code> variable. This ensures consistency across cards, inputs, and modals.
+          We utilize a constrained border-radius scale to maintain a professional yet approachable aesthetic. Our global default is set to <code class="bg-muted/20 px-1 py-0.5 rounded">0.2rem</code> (8px) via the <code class="bg-muted/20 px-1 py-0.5 rounded">--ui-radius</code> variable. This ensures consistency across cards, inputs, and modals.
         </p>
       </UCard>
 

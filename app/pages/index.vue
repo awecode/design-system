@@ -73,7 +73,7 @@
       }, {
         icon: 'i-lucide-radius',
         title: 'Border Radius',
-        description: 'A default radius of 0.5rem across all components ensures a soft, modern appearance. Scaled variants (sm, md, lg, xl) for flexibility.'
+        description: 'A default radius of 0.2rem across all components ensures a soft, modern appearance. Scaled variants (sm, md, lg, xl) for flexibility.'
       }, {
         icon: 'i-lucide-layers',
         title: 'Elevation & Shadows',
