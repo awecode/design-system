@@ -11,15 +11,14 @@ useHead({
   }
 })
 
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+const title = 'Awecode Design System'
+const description = 'The official design system documentation for Awecode. Guidelines, components, and resources for building consistent, beautiful digital experiences.'
 
 useSeoMeta({
   title,
   description,
   ogTitle: title,
   ogDescription: description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
   twitterCard: 'summary_large_image'
 })
 </script>
@@ -32,19 +31,31 @@ useSeoMeta({
           <AppLogo class="w-auto h-6 shrink-0" />
         </NuxtLink>
 
-        <TemplateMenu />
+        <USeparator orientation="vertical" class="h-6 mx-2" />
+
+        <span class="text-sm font-medium text-muted">Design System</span>
       </template>
 
       <template #right>
         <UColorModeButton />
 
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/AwecodeSoft"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
           color="neutral"
           variant="ghost"
+        />
+
+        <UButton
+          to="https://awecode.com"
+          target="_blank"
+          label="awecode.com"
+          color="neutral"
+          variant="ghost"
+          trailing-icon="i-lucide-external-link"
+          size="sm"
         />
       </template>
     </UHeader>
@@ -53,18 +64,26 @@ useSeoMeta({
       <NuxtPage />
     </UMain>
 
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
+    <USeparator />
 
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+          © {{ new Date().getFullYear() }} Awecode • Kathmandu, Nepal
         </p>
       </template>
 
       <template #right>
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://awecode.com"
+          target="_blank"
+          label="awecode.com"
+          color="neutral"
+          variant="ghost"
+          size="sm"
+        />
+        <UButton
+          to="https://github.com/AwecodeSoft"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
