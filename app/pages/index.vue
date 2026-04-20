@@ -40,6 +40,14 @@
           variant="outline"
         />
         <UButton
+          to="/kitchen-sink"
+          label="Kitchen Sink"
+          icon="i-lucide-component"
+          size="lg"
+          color="neutral"
+          variant="outline"
+        />
+        <UButton
           to="https://awecode.com/brand-guidelines"
           target="_blank"
           label="Brand Assets"
