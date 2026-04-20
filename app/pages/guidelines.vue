@@ -34,6 +34,7 @@
     </section>
 
     <GuidelinesFormatting />
+    <GuidelinesAccessibility />
     <GuidelinesTechnology />
     <GuidelinesNaming />
   </div>
