@@ -7,10 +7,10 @@ const colors = {
     description: 'Terracotta/copper (hue ~39)',
     lightName: 'primary-500',
     darkName: 'primary-400',
-    lightHex: '#ae6937',
-    darkHex: '#d1926b',
-    lightOklch: 'oklch(0.6082 0.0835 38.91)',
-    darkOklch: 'oklch(0.7082 0.0835 38.91)',
+    lightHex: '#ae705e',
+    darkHex: '#cf8671',
+    lightOklch: 'oklch(0.607 0.084 36.93)',
+    darkOklch: 'oklch(0.69 0.096 36.79)',
     commonNames: 'Copper Penny, Brooklyn, Clovedust, Warm Terracotta'
   }
 }
