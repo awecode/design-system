@@ -21,11 +21,50 @@ const options = [
   { label: 'Option 3', value: '3' }
 ]
 
+const dropdownItems = [
+  [{
+    label: 'Profile',
+    icon: 'i-lucide-user'
+  }, {
+    label: 'Billing',
+    icon: 'i-lucide-credit-card'
+  }],
+  [{
+    label: 'Logout',
+    icon: 'i-lucide-log-out'
+  }]
+]
+
+const tableColumns: any[] = [
+  { accessorKey: 'name', header: 'Name' },
+  { accessorKey: 'email', header: 'Email' },
+  { accessorKey: 'role', header: 'Role' }
+]
+
+const tableRows = [
+  { name: 'Lindsay Walton', email: 'lindsay.walton@example.com', role: 'Member' },
+  { name: 'Courtney Henry', email: 'courtney.henry@example.com', role: 'Admin' },
+  { name: 'Tom Cook', email: 'tom.cook@example.com', role: 'Director' }
+]
+
 const selected = ref('1')
 const text = ref('')
 const checked = ref(true)
 const slideover = ref(false)
 const modal = ref(false)
+const page = ref(1)
+
+const timelineItems = [
+  { label: 'Project Started', description: 'Initial commit and architectural setup.', icon: 'i-lucide-rocket', date: '2 days ago' },
+  { label: 'Design System Set', description: 'Core colors and typography tokens defined.', icon: 'i-lucide-palette', date: 'Yesterday' },
+  { label: 'Kitchen Sink Added', description: 'A comprehensive component preview page.', icon: 'i-lucide-check-circle', date: 'Just now' }
+]
+
+const carouselItems = [
+  'https://picsum.photos/1920/1080?random=1',
+  'https://picsum.photos/1920/1080?random=2',
+  'https://picsum.photos/1920/1080?random=3'
+]
 
 function showToast() {
   toast.add({
@@ -43,7 +82,7 @@ function showToast() {
         Kitchen Sink
       </h1>
       <p class="text-xl text-muted max-w-2xl mx-auto">
-        A comprehensive preview of Nuxt UI components styled with the Awecode Design System.
+        Preview of Nuxt UI components.
       </p>
     </div>
 
@@ -84,14 +123,17 @@ function showToast() {
           icon="i-lucide-plus"
           label="With Icon"
         />
-        <UButton
-          icon="i-lucide-trash"
-          color="error"
-          variant="soft"
-        />
+        <UDropdownMenu :items="dropdownItems">
+          <UButton
+            label="Options"
+            color="neutral"
+            variant="outline"
+            trailing-icon="i-lucide-chevron-down"
+          />
+        </UDropdownMenu>
       </div>
       <div class="flex flex-wrap gap-4 items-center">
-        <UButtonGroup>
+        <UFieldGroup>
           <UButton
             label="One"
             color="neutral"
@@ -107,16 +149,133 @@ function showToast() {
             color="neutral"
             variant="outline"
           />
-        </UButtonGroup>
+        </UFieldGroup>
       </div>
     </section>
 
-    <!-- Inputs -->
+    <!-- Elements -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold border-b border-default pb-2">
+        UI Elements
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <UCard variant="subtle">
+          <template #header>
+            Avatars & Chips
+          </template>
+          <div class="space-y-6">
+            <div class="flex flex-wrap items-center gap-4">
+              <UAvatar
+                icon="i-lucide-user"
+                color="primary"
+                variant="subtle"
+              />
+              <UAvatar
+                text="DW"
+                color="neutral"
+                variant="subtle"
+              />
+              <UAvatar
+                icon="i-lucide-robot"
+                color="info"
+                variant="outline"
+              />
+              <UChip
+                color="success"
+                inset
+              >
+                <UAvatar text="JD" />
+              </UChip>
+            </div>
+            <UAvatarGroup :max="3">
+              <UAvatar text="BC" />
+              <UAvatar text="RH" />
+              <UAvatar text="SM" />
+              <UAvatar text="NK" />
+            </UAvatarGroup>
+          </div>
+        </UCard>
+
+        <UCard variant="subtle">
+          <template #header>
+            Separators
+          </template>
+          <div class="space-y-6">
+            <USeparator label="Horizontal Label" />
+            <USeparator
+              icon="i-lucide-star"
+              color="primary"
+            />
+            <div class="flex h-5 items-center space-x-4">
+              <span class="text-sm">Link A</span>
+              <USeparator orientation="vertical" />
+              <span class="text-sm">Link B</span>
+              <USeparator orientation="vertical" />
+              <span class="text-sm">Link C</span>
+            </div>
+          </div>
+        </UCard>
+
+        <UCard variant="subtle">
+          <template #header>
+            Progress & Loading
+          </template>
+          <div class="space-y-6">
+            <UProgress
+              :value="65"
+              label="Uploading..."
+              size="sm"
+              color="primary"
+            />
+            <div class="flex items-center gap-4">
+              <USkeleton class="h-12 w-12 rounded-full" />
+              <div class="space-y-2 flex-1">
+                <USkeleton class="h-4 w-full" />
+                <USkeleton class="h-4 w-3/4" />
+              </div>
+            </div>
+          </div>
+        </UCard>
+      </div>
+    </section>
+
+    <!-- Forms -->
     <section class="space-y-6">
       <h2 class="text-2xl font-bold border-b border-default pb-2">
         Forms & Inputs
       </h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <UCard variant="subtle">
+          <template #header>
+            Control Inputs
+          </template>
+          <div class="space-y-6">
+            <UFormField label="Checkboxes">
+              <UCheckboxGroup
+                :items="['Option A', 'Option B', 'Option C']"
+                color="primary"
+              />
+            </UFormField>
+            <UFormField label="Radio Buttons">
+              <URadioGroup
+                :items="['Morning', 'Afternoon', 'Evening']"
+                color="primary"
+              />
+            </UFormField>
+            <div class="flex items-center gap-6">
+              <UFormField label="Notifications">
+                <USwitch v-model="checked" />
+              </UFormField>
+              <UFormField label="Enabled">
+                <USwitch
+                  disabled
+                  :model-value="true"
+                />
+              </UFormField>
+            </div>
+          </div>
+        </UCard>
+
         <UCard variant="subtle">
           <template #header>
             Text Inputs
@@ -152,7 +311,7 @@ function showToast() {
 
         <UCard variant="subtle">
           <template #header>
-            Selects & Options
+            Rich Controls
           </template>
           <div class="space-y-4">
             <UFormField label="Simple Select">
@@ -162,47 +321,15 @@ function showToast() {
                 class="w-full"
               />
             </UFormField>
-            <div class="flex items-center gap-6 py-2">
-              <UCheckbox
-                v-model="checked"
-                label="Check me"
-              />
-              <USwitch label="Toggle me" />
-            </div>
-            <div class="space-y-2">
-              <p class="text-sm font-medium">
-                Radio Group
-              </p>
-              <div class="flex gap-4">
-                <URadio
-                  label="Option A"
-                  name="radio"
-                  value="a"
-                />
-                <URadio
-                  label="Option B"
-                  name="radio"
-                  value="b"
-                />
-              </div>
-            </div>
-          </div>
-        </UCard>
-
-        <UCard variant="subtle">
-          <template #header>
-            Textarea & Feedback
-          </template>
-          <div class="space-y-4">
-            <UFormField label="Bio">
+            <UFormField label="Textarea">
               <UTextarea
-                placeholder="Tell us about yourself..."
+                placeholder="Message..."
                 class="w-full"
               />
             </UFormField>
             <UButton
               block
-              label="Show Toast Notification"
+              label="Show Toast"
               @click="showToast"
             />
           </div>
@@ -215,95 +342,65 @@ function showToast() {
       <h2 class="text-2xl font-bold border-b border-default pb-2">
         Navigation
       </h2>
-      <div class="space-y-8">
-        <UCard variant="subtle">
-          <UTabs
-            :items="items"
-            class="max-w-2xl"
-          >
-            <template #account>
-              <div class="p-4 text-sm text-muted">
-                Account details logic would go here.
-              </div>
-            </template>
-            <template #password>
-              <div class="p-4 text-sm text-muted">
-                Password reset forms would go here.
-              </div>
-            </template>
-            <template #settings>
-              <div class="p-4 text-sm text-muted">
-                General application settings.
-              </div>
-            </template>
-          </UTabs>
-        </UCard>
-        <div class="flex justify-center">
-          <UBreadcrumb :items="[{ label: 'Home', to: '/' }, { label: 'Guidelines', to: '/guidelines' }, { label: 'Kitchen Sink' }]" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Data Display -->
-    <section class="space-y-6">
-      <h2 class="text-2xl font-bold border-b border-default pb-2">
-        Data Display
-      </h2>
       <div class="grid md:grid-cols-2 gap-8">
         <UCard variant="subtle">
           <template #header>
-            Badges & Status
+            Tabs & Breadcrumbs
           </template>
-          <div class="flex flex-wrap gap-2">
-            <UBadge label="Default" />
-            <UBadge
-              label="Primary"
-              color="primary"
-            />
-            <UBadge
-              label="Success"
-              color="success"
-            />
-            <UBadge
-              label="Warning"
-              color="warning"
-            />
-            <UBadge
-              label="Error"
-              color="error"
-            />
-            <UBadge
-              label="Outline"
-              variant="outline"
-            />
-            <UBadge
-              label="Subtle"
-              variant="subtle"
-            />
+          <div class="space-y-8">
+            <UTabs
+              :items="items"
+              class="w-full"
+            >
+              <template #account>
+                <div class="p-4 text-sm text-muted">
+                  Account content.
+                </div>
+              </template>
+              <template #password>
+                <div class="p-4 text-sm text-muted">
+                  Password content.
+                </div>
+              </template>
+            </UTabs>
+            <UBreadcrumb :items="[{ label: 'Home', to: '/' }, { label: 'Guidelines', to: '/guidelines' }, { label: 'Kitchen Sink' }]" />
           </div>
         </UCard>
 
         <UCard variant="subtle">
           <template #header>
-            Progress & Loading
+            Pagination
           </template>
-          <div class="space-y-6">
-            <UProgress
-              :value="65"
-              label="Uploading..."
-              size="sm"
-              color="primary"
+          <div class="flex flex-col items-center justify-center h-full py-8 space-y-6">
+            <UPagination
+              v-model:page="page"
+              :total="100"
+              :sibling-count="1"
             />
-            <div class="flex items-center gap-4">
-              <USkeleton class="h-12 w-12 rounded-full" />
-              <div class="space-y-2 flex-1">
-                <USkeleton class="h-4 w-full" />
-                <USkeleton class="h-4 w-3/4" />
-              </div>
-            </div>
+            <p class="text-sm text-muted">
+              Active Page: {{ page }}
+            </p>
           </div>
         </UCard>
       </div>
+    </section>
+
+    <!-- Data Table -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold border-b border-default pb-2">
+        Data Table
+      </h2>
+      <UCard
+        variant="subtle"
+        class="overflow-hidden"
+        :ui="{ body: 'p-0' }"
+      >
+        <UTable
+          :columns="tableColumns"
+          :data="tableRows"
+          class="w-full"
+        />
+      </UCard>
     </section>
 
     <!-- Overlays -->
@@ -398,24 +495,87 @@ function showToast() {
       </USlideover>
     </section>
 
-    <!-- Content -->
+    <!-- Media & Misc -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold border-b border-default pb-2">
+        Media & Activity
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <UCard variant="subtle">
+          <template #header>
+            Timeline
+          </template>
+          <div class="p-4">
+            <UTimeline :items="timelineItems" />
+          </div>
+        </UCard>
+
+        <UCard variant="subtle">
+          <template #header>
+            Calendar
+          </template>
+          <div class="flex justify-center p-4">
+            <UCalendar />
+          </div>
+        </UCard>
+
+        <UCard
+          variant="subtle"
+        >
+          <template #header>
+            Carousel
+          </template>
+          <UCarousel
+            v-slot="{ item }"
+            :items="carouselItems"
+            :ui="{ item: 'basis-full' }"
+            arrows
+            indicators
+            class="rounded-lg overflow-hidden"
+          >
+            <img
+              :src="item"
+              class="w-full h-48 object-cover"
+              draggable="false"
+            >
+          </UCarousel>
+        </UCard>
+      </div>
+    </section>
+
+    <!-- Feedback & Content -->
     <section class="space-y-6 pb-20">
       <h2 class="text-2xl font-bold border-b border-default pb-2">
-        Content Containers
+        Feedback & Content
       </h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <UAccordion
-          :items="[{ label: 'What is a kitchen sink?', content: 'A page where you throw in everything but the kitchen sink - basically showing off all components at once.' }, { label: 'Can I use this page for testing?', content: 'Absolutely. It is the best place to verify theme changes globally.' }]"
-          variant="soft"
-        />
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div class="space-y-6">
+          <UAccordion
+            :items="[{ label: 'What is a kitchen sink?', content: 'A page where you throw in everything but the kitchen sink.' }, { label: 'How to use it?', content: 'Just scroll and see how components look.' }]"
+            variant="soft"
+          />
+          <UAlert
+            icon="i-lucide-info"
+            title="System Message"
+            description="All components are using the Awecode brand colors."
+            color="primary"
+            variant="subtle"
+          />
+        </div>
 
-        <UAlert
-          icon="i-lucide-info"
-          title="Attention!"
-          description="This kitchen sink is built using Nuxt UI v4 conventions. Always check the official documentation for the latest slot names and props."
-          color="primary"
-          variant="subtle"
-        />
+        <UEmpty
+          icon="i-lucide-folder-open"
+          title="No documents yet"
+          description="Get started by creating your first document."
+          class="h-64"
+        >
+          <template #actions>
+            <UButton
+              label="Create Project"
+              icon="i-lucide-plus"
+            />
+          </template>
+        </UEmpty>
       </div>
     </section>
   </div>
