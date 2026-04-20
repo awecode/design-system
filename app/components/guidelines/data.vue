@@ -1,6 +1,27 @@
 <script setup>
 import { ref } from 'vue'
 
+// Search & Debounce example state
+const searchQuery = ref('')
+const isSearching = ref(false)
+let searchTimeout = null
+
+const handleSearchInput = () => {
+  // Clear the timeout on every keystroke
+  if (searchTimeout) clearTimeout(searchTimeout)
+
+  // Set the 300ms debounce timeout
+  searchTimeout = setTimeout(async () => {
+    // Only show loading indicator once the debounce delay has passed
+    isSearching.value = true
+
+    // Simulate the actual server-side API query processing time
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
+    isSearching.value = false
+  }, 300)
+}
+
 // Action Feedback example state
 const isActionLoading = ref(false)
 
@@ -15,6 +36,8 @@ const isAsyncModalOpen = ref(false)
 const isModalDataLoading = ref(true)
 
 const openAsyncModal = () => {
+  // UModal automatically handles the open state when the trigger is clicked.
+  // We just need to reset and handle the data loading state here.
   isModalDataLoading.value = true
   // Simulate network request for modal content
   setTimeout(() => {
@@ -26,9 +49,14 @@ const openAsyncModal = () => {
 <template>
   <!-- Data Loading & Processing -->
   <section class="space-y-6">
-    <h3 class="text-xl font-bold text-default mb-4 border-b border-default pb-2">
-      Data Loading & Processing
-    </h3>
+    <div>
+      <h3 class="text-xl font-bold text-default mb-3 border-b border-default pb-2">
+        Data Loading & Processing
+      </h3>
+      <p class="text-sm text-muted max-w-4xl">
+        Always provide immediate visual feedback for all user interactions. Utilize skeletons, loading icons, and progress indicators to clearly communicate system status and assure users that their action has been registered while work completes in the background.
+      </p>
+    </div>
 
     <div class="grid md:grid-cols-2 gap-6">
       <!-- SWR & Caching -->
@@ -184,8 +212,18 @@ const openAsyncModal = () => {
           Search & Input Debouncing
         </h4>
         <p class="text-sm text-muted mb-4 flex-grow">
-          Enforce a <strong>250ms debounce</strong> delay on all text inputs that trigger server-side queries on typing. This standardizes API performance across the application, prevents race conditions, and ensures the UI remains responsive while the user is actively typing.
+          Enforce a <strong>300ms debounce</strong> delay on all text inputs that trigger server-side queries. This standardizes API performance across the application, prevents race conditions, and ensures the UI remains responsive while the user is actively typing.
         </p>
+        <div class="border-t border-default pt-4">
+          <UInput
+            v-model="searchQuery"
+            icon="i-lucide-search"
+            placeholder="Search records..."
+            :loading="isSearching"
+            class="w-full max-w-sm"
+            @input="handleSearchInput"
+          />
+        </div>
       </UCard>
     </div>
   </section>
