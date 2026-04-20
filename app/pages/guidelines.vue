@@ -18,7 +18,7 @@
 
     <!-- Design System Rules & Best Practices -->
     <section>
-      <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 text-default">
+      <h2 class="text-2xl font-bold flex items-center gap-2 mb-2 text-default">
         <UIcon
           name="i-lucide-ruler"
           class="size-6 text-primary"
@@ -26,9 +26,11 @@
         Design System & Best Practices
       </h2>
 
-      <div class="space-y-12">
-        <GuidelinesGeneral />
+      <p class="text-sm text-muted max-w-4xl mb-4">
+        Always provide immediate visual feedback for all user interactions. Utilize skeletons, loading icons, and progress indicators to clearly communicate system status and assure users that their action has been registered while work completes in the background.
+      </p>
 
+      <div class="space-y-12">
         <GuidelinesInterface />
         <GuidelinesData />
       </div>
