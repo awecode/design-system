@@ -105,6 +105,8 @@ const handleSignUp = () => {
       </div>
     </section>
 
+    <GuidelinesButtons />
+
     <!-- 2. Display & Navigation Patterns -->
     <section>
       <h3 class="text-xl font-bold text-default mb-4 border-b border-default pb-2">
@@ -245,29 +247,33 @@ const handleSignUp = () => {
       </h3>
       <div class="grid md:grid-cols-2 gap-6">
         <UCard
-          variant="subtle"
-          class="h-full"
+          variant="outline"
+          class="bg-elevated/50"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
-              name="i-lucide-mouse-pointer-click"
+              name="i-lucide-search"
               class="text-primary"
-            /> Primary Call to Action
+            /> Search & Debounce
           </h4>
-          <p class="text-sm text-muted mb-3">
-            Only one primary call to action (button or link) should be used per page or section. Other actions should naturally use secondary styling.
+          <p class="text-sm text-muted">
+            Use a <strong>250 ms</strong> debounce when querying server-side data from input fields to reduce unnecessary API calls and improve performance.
           </p>
-          <div class="flex gap-2">
-            <UButton
-              label="Primary Action"
-              color="primary"
-            />
-            <UButton
-              label="Secondary Action"
-              color="neutral"
-              variant="outline"
-            />
-          </div>
+        </UCard>
+
+        <UCard
+          variant="outline"
+          class="bg-elevated/50"
+        >
+          <h4 class="font-bold mb-2 flex items-center gap-2">
+            <UIcon
+              name="i-lucide-zap"
+              class="text-primary"
+            /> Saving Clicks
+          </h4>
+          <p class="text-sm text-muted">
+            Autofocus on the input element or action button if the user will most probably focus there (using the <code>autofocus</code> HTML property).
+          </p>
         </UCard>
 
         <UCard
@@ -316,36 +322,6 @@ const handleSignUp = () => {
         <UCard
           variant="outline"
           class="bg-elevated/50"
-        >
-          <h4 class="font-bold mb-2 flex items-center gap-2">
-            <UIcon
-              name="i-lucide-search"
-              class="text-primary"
-            /> Search & Debounce
-          </h4>
-          <p class="text-sm text-muted">
-            Use a <strong>250 ms</strong> debounce when querying server-side data from input fields to reduce unnecessary API calls and improve performance.
-          </p>
-        </UCard>
-
-        <UCard
-          variant="outline"
-          class="bg-elevated/50"
-        >
-          <h4 class="font-bold mb-2 flex items-center gap-2">
-            <UIcon
-              name="i-lucide-zap"
-              class="text-primary"
-            /> Saving Clicks
-          </h4>
-          <p class="text-sm text-muted">
-            Autofocus on the input element or action button if the user will most probably focus there (using the <code>autofocus</code> HTML property).
-          </p>
-        </UCard>
-
-        <UCard
-          variant="outline"
-          class="col-span-1 md:col-span-2 bg-elevated/50"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
