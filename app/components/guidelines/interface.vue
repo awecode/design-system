@@ -246,78 +246,65 @@ const handleSignUp = () => {
         Forms & Actions
       </h3>
       <div class="grid md:grid-cols-2 gap-6">
-        <UCard
-          variant="outline"
-          class="bg-elevated/50"
-        >
-          <h4 class="font-bold mb-2 flex items-center gap-2">
-            <UIcon
-              name="i-lucide-search"
-              class="text-primary"
-            /> Search & Debounce
-          </h4>
-          <p class="text-sm text-muted">
-            Use a <strong>250 ms</strong> debounce when querying server-side data from input fields to reduce unnecessary API calls and improve performance.
-          </p>
-        </UCard>
-
-        <UCard
-          variant="outline"
-          class="bg-elevated/50"
-        >
-          <h4 class="font-bold mb-2 flex items-center gap-2">
-            <UIcon
-              name="i-lucide-zap"
-              class="text-primary"
-            /> Saving Clicks
-          </h4>
-          <p class="text-sm text-muted">
-            Autofocus on the input element or action button if the user will most probably focus there (using the <code>autofocus</code> HTML property).
-          </p>
-        </UCard>
-
-        <UCard
-          variant="outline"
-          class="bg-elevated/50"
-        >
-          <h4 class="font-bold mb-2 flex items-center gap-2">
-            <UIcon
-              name="i-lucide-trash-2"
-              class="text-primary size-5"
-            />
-            Destructive Actions
-          </h4>
-          <p class="text-sm text-muted mb-4">
-            Always require explicit confirmation dialogs for deletions or irreversible actions. Destructive buttons must use the <code class="bg-muted/20 px-1 py-0.5 rounded">error</code> color variant to signal danger and must never be the default focused element when a view renders.
-          </p>
-          <UModal
-            v-model:open="isDeleteModalOpen"
-            title="Delete Account"
-            description="Are you absolutely sure? This action cannot be undone and will permanently delete your account data."
+        <div>
+          <UCard
+            variant="outline"
+            class="bg-elevated/50"
           >
-            <UButton
-              label="Delete Account"
-              color="error"
-              variant="outline"
-              icon="i-lucide-trash-2"
-            />
-            <template #footer>
-              <div class="flex justify-end gap-2 w-full">
-                <UButton
-                  label="Cancel"
-                  color="neutral"
-                  variant="ghost"
-                  @click="isDeleteModalOpen = false"
-                />
-                <UButton
-                  label="Confirm Deletion"
-                  color="error"
-                  @click="isDeleteModalOpen = false"
-                />
-              </div>
-            </template>
-          </UModal>
-        </UCard>
+            <h4 class="font-bold mb-2 flex items-center gap-2">
+              <UIcon
+                name="i-lucide-zap"
+                class="text-primary"
+              /> Autofocus
+            </h4>
+            <p class="text-sm text-muted">
+              Reduce friction by automatically focusing the primary input or action button when a view or modal renders. Use the HTML <code class="bg-muted/20 px-1 py-0.5 rounded font-mono text-xs">autofocus</code> attribute wherever the user's immediate next step is highly predictable.
+            </p>
+          </UCard>
+
+          <UCard
+            variant="outline"
+            class="bg-elevated/50 mt-4"
+          >
+            <h4 class="font-bold mb-2 flex items-center gap-2">
+              <UIcon
+                name="i-lucide-trash-2"
+                class="text-primary size-5"
+              />
+              Destructive Actions
+            </h4>
+            <p class="text-sm text-muted mb-4">
+              Always require explicit confirmation dialogs for deletions or irreversible actions. Destructive buttons must use the <code class="bg-muted/20 px-1 py-0.5 rounded">error</code> color variant to signal danger and must never be the default focused element when a view renders.
+            </p>
+            <UModal
+              v-model:open="isDeleteModalOpen"
+              title="Delete Account"
+              description="Are you absolutely sure? This action cannot be undone and will permanently delete your account data."
+            >
+              <UButton
+                label="Delete Account"
+                color="error"
+                variant="outline"
+                icon="i-lucide-trash-2"
+              />
+              <template #footer>
+                <div class="flex justify-end gap-2 w-full">
+                  <UButton
+                    label="Cancel"
+                    color="neutral"
+                    variant="ghost"
+                    @click="isDeleteModalOpen = false"
+                  />
+                  <UButton
+                    label="Confirm Deletion"
+                    color="error"
+                    @click="isDeleteModalOpen = false"
+                  />
+                </div>
+              </template>
+            </UModal>
+          </UCard>
+        </div>
 
         <UCard
           variant="outline"
