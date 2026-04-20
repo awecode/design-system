@@ -30,6 +30,7 @@
         <GuidelinesGeneral />
 
         <GuidelinesInterface />
+        <GuidelinesData />
       </div>
     </section>
 
