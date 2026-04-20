@@ -1,9 +1,13 @@
 <template>
   <!-- Advanced Accessibility (a11y) -->
   <section class="space-y-6">
-    <h3 class="text-xl font-bold mb-4 pb-2">
+    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 pb-4">
+      <UIcon
+        name="i-lucide-accessibility"
+        class="size-6 text-primary"
+      />
       Accessibility (a11y)
-    </h3>
+    </h2>
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Focus States -->
       <UCard

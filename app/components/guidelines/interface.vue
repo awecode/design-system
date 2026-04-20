@@ -115,6 +115,7 @@ const handleSignUp = () => {
           </p>
         </UCard>
 
+        <!-- Shadows & Elevations -->
         <UCard
           variant="subtle"
         >
@@ -316,9 +317,8 @@ const handleSignUp = () => {
             /> Form Submissions
           </h4>
           <ul class="text-sm text-muted space-y-2 list-disc list-inside mb-4">
-            <li>Submit buttons should be <strong>disabled</strong> if validation is failing and the user is already provided with a validation error.</li>
-            <li>Upon submission, the submit button should be disabled and form submission should be prevented unless completed through a button click or carriage return.</li>
-            <li>Submit buttons should show a loading spinner and present a continuous verb inside the button (e.g. <em>"Saving..."</em>).</li>
+            <li>Disable submit buttons when validation fails and errors are already visible.</li>
+            <li>On successful submission, disable the button to prevent duplicate requests and display a loading spinner and update the button label to acknowledge the action, such as “Saving...”</li>
           </ul>
           <form
             class="flex flex-col gap-4 p-4 border border-dashed border-default rounded-lg bg-background/50"

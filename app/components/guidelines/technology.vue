@@ -22,7 +22,7 @@
           Nuxt UI
         </h3>
         <p class="text-muted text-sm relative z-10">
-          Our primary design system and component library. Used for almost all our web applications and digital interfaces to ensure consistency and speed.
+          Our primary component library. Design system is heavily based on this. Used for almost all our web applications and digital interfaces to ensure consistency and speed.
         </p>
       </UCard>
 
@@ -39,7 +39,17 @@
           Lucide Icons
         </h3>
         <p class="text-muted text-sm relative z-10">
-          Our standard icon set. Stick to Lucide icons exclusively for visual consistency. Use other icons only if Lucide does not have a suitable representation.
+          Standard UI actions use
+          <a
+            href="https://lucide.dev/icons/"
+            target="_blank"
+            class="text-primary hover:underline font-medium"
+          >Lucide</a>. Use
+          <a
+            href="https://simpleicons.org/"
+            target="_blank"
+            class="text-primary hover:underline font-medium"
+          >Simple Icons</a> strictly for brand logos or when Lucide is insufficient. Use other icon sets of these two don't suffice.
         </p>
       </UCard>
 
@@ -56,7 +66,7 @@
           Quasar Framework
         </h3>
         <p class="text-muted text-sm relative z-10">
-          Reserved for complex, heavy enterprise software and specific internal admin tooling where its comprehensive components accelerate development.
+          Reserved for a few enterprise software where its comprehensive components accelerate development.
         </p>
       </UCard>
     </div>
