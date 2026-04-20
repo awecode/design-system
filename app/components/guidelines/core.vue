@@ -187,6 +187,28 @@ function copyToClipboard(text: string, id: string) {
         </div>
       </UCard>
     </div>
+
+    <!-- Configuration CTA -->
+    <div class="mt-10 p-6 rounded-xl border border-default bg-muted/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center sm:text-left">
+        <h4 class="font-bold text-default">
+          Implementation Ready
+        </h4>
+        <p class="text-sm text-muted">
+          Need to apply these brand colors and fonts to your Nuxt or Tailwind project?
+          Grab the ready-to-use theme tokens and configuration files.
+        </p>
+      </div>
+      <UButton
+        to="/config"
+        label="View Configuration"
+        icon="i-lucide-settings"
+        size="lg"
+        color="primary"
+        variant="subtle"
+        class="shrink-0"
+      />
+    </div>
   </section>
 
   <!-- Color Detail Modal -->
