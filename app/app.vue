@@ -34,7 +34,10 @@ const navLinks = [
   <UApp :toaster="{ position: 'top-right' }">
     <UHeader>
       <template #left>
-        <NuxtLink to="/">
+        <NuxtLink
+          to="https://awecode.com"
+          target="_blank"
+        >
           <AppLogo class="w-auto h-6 shrink-0" />
         </NuxtLink>
 
@@ -42,8 +45,9 @@ const navLinks = [
           orientation="vertical"
           class="h-6 mx-2"
         />
-
-        <span class="text-sm font-medium text-muted hidden sm:inline-block">Design System</span>
+        <NuxtLink to="/">
+          <span class="text-sm font-medium text-muted hidden sm:inline-block">Design System</span>
+        </NuxtLink>
       </template>
 
       <template #center>
