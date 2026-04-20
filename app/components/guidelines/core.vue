@@ -10,7 +10,8 @@ const colors = {
     lightHex: '#ae6937',
     darkHex: '#d1926b',
     lightOklch: 'oklch(0.6082 0.0835 38.91)',
-    darkOklch: 'oklch(0.7082 0.0835 38.91)'
+    darkOklch: 'oklch(0.7082 0.0835 38.91)',
+    commonNames: 'Copper Penny, Brooklyn, Clovedust, Warm Terracotta'
   }
 }
 

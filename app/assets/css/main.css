@@ -9,20 +9,18 @@
  * Neutral: Warm stone grays (mapped to Tailwind 'stone')
  */
 
-/* Custom primary color palette — warm terracotta/copper */
 @theme static {
-  /* Primary: Awecode brand — warm terracotta/copper, hue ~39 */
-  --color-primary-50: oklch(0.9700 0.0120 39.00);
-  --color-primary-100: oklch(0.9350 0.0250 39.00);
-  --color-primary-200: oklch(0.8800 0.0450 39.00);
-  --color-primary-300: oklch(0.8100 0.0620 39.00);
-  --color-primary-400: oklch(0.7300 0.0780 39.00);
-  --color-primary-500: oklch(0.6082 0.0835 38.91);
-  --color-primary-600: oklch(0.5400 0.0850 38.90);
-  --color-primary-700: oklch(0.4700 0.0750 38.90);
-  --color-primary-800: oklch(0.3900 0.0620 38.90);
-  --color-primary-900: oklch(0.3200 0.0480 38.90);
-  --color-primary-950: oklch(0.2500 0.0350 38.90);
+--color-primary-50: oklch(0.958 0.009 34.44);
+  --color-primary-100: oklch(0.924 0.017 31.16);
+  --color-primary-200: oklch(0.841 0.041 33.45);
+  --color-primary-300: oklch(0.766 0.067 33.93);
+  --color-primary-400: oklch(0.69 0.096 36.79);
+  --color-primary-500: oklch(0.607 0.084 36.93);
+  --color-primary-600: oklch(0.517 0.072 37.14);
+  --color-primary-700: oklch(0.419 0.059 36.12);
+  --color-primary-800: oklch(0.323 0.046 36.17);
+  --color-primary-900: oklch(0.237 0.033 38.28);
+  --color-primary-950: oklch(0.178 0.025 32.76);
 
   /*
   --color-primary: var(--color-primary-500);
@@ -38,7 +36,6 @@
 :root {
   --ui-radius: 0.2rem;
 
-  /* Shadow overrides matching the tweakcn config */
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
   --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
