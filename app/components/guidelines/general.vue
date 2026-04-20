@@ -10,7 +10,7 @@
           /> Base Recommendations
         </h4>
         <p class="text-sm text-muted">
-          These guidelines are base recommendations for consistency and predictability. You can use custom styling for application-specific requirements.
+          These guidelines are base recommendations for consistency and predictability. You can deviate for application-specific requirements only if these guidelines do not meet your needs.
         </p>
       </UCard>
       <UCard variant="outline">
@@ -21,7 +21,11 @@
           /> Contrast Ratio
         </h4>
         <p class="text-sm text-muted">
-          Use a good contrast ratio for both light and dark modes for all elements. All UIs must be comprehensively WCAG Compliant.
+          Ensure all UI elements meet <NuxtLink
+            to="https://www.w3.org/TR/WCAG21/#contrast-minimum"
+            target="_blank"
+            class="text-primary hover:underline"
+          >WCAG 2.1 AA</NuxtLink> contrast requirements, maintaining a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text and UI components in both light and dark modes.
         </p>
       </UCard>
     </div>
