@@ -24,7 +24,7 @@ const handleSignUp = () => {
   <div class="space-y-12">
     <!-- 1. Layout & Structural Foundations -->
     <section>
-      <h3 class="text-xl font-bold text-default mb-4 border-b border-default pb-2">
+      <h3 class="text-xl font-bold mb-4 pb-2">
         Layout & Structural Foundations
       </h3>
       <div class="grid md:grid-cols-3 gap-6">
@@ -93,11 +93,11 @@ const handleSignUp = () => {
           </p>
           <ul class="text-sm text-muted space-y-3 list-none">
             <li>
-              <strong class="block text-default mb-1">Prose/Reading</strong>
+              <strong class="block mb-1">Prose/Reading</strong>
               Use <code class="bg-muted/20 px-1 py-0.5 rounded">max-w-3xl</code> to maintain an optimal reading line length.
             </li>
             <li>
-              <strong class="block text-default mb-1">Dashboards</strong>
+              <strong class="block mb-1">Dashboards</strong>
               Use <code class="bg-muted/20 px-1 py-0.5 rounded">max-w-7xl</code> or full fluid width for dense data tables and metrics.
             </li>
           </ul>
@@ -107,7 +107,7 @@ const handleSignUp = () => {
           variant="outline"
           class="bg-elevated/50"
         >
-          <h3 class="text-lg font-bold text-default mb-2 flex items-center gap-2">
+          <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
             <UIcon
               name="i-lucide-scaling"
               class="text-primary size-5"
@@ -123,7 +123,7 @@ const handleSignUp = () => {
           variant="outline"
           class="bg-elevated/50"
         >
-          <h3 class="text-lg font-bold text-default mb-2 flex items-center gap-2">
+          <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
             <UIcon
               name="i-lucide-layers"
               class="text-primary size-5"
@@ -141,7 +141,7 @@ const handleSignUp = () => {
 
     <!-- 2. Display & Navigation Patterns -->
     <section>
-      <h3 class="text-xl font-bold text-default mb-4 border-b border-default pb-2">
+      <h3 class="text-xl font-bold mb-4 pb-2">
         Display & Navigation Patterns
       </h3>
       <div class="grid md:grid-cols-2 gap-6">
@@ -274,7 +274,7 @@ const handleSignUp = () => {
 
     <!-- 3. Forms & Actions -->
     <section>
-      <h3 class="text-xl font-bold text-default mb-4 border-b border-default pb-2">
+      <h3 class="text-xl font-bold mb-4 pb-2">
         Forms & Actions
       </h3>
       <div class="grid md:grid-cols-2 gap-6">
@@ -392,7 +392,7 @@ const handleSignUp = () => {
 
     <!-- 4. System Feedback & Error States -->
     <section>
-      <h3 class="text-xl font-bold text-default mb-4 border-b border-default pb-2">
+      <h3 class="text-xl font-bold mb-4 pb-2">
         System Feedback & Error States
       </h3>
       <div class="grid md:grid-cols-2 gap-6">
@@ -437,7 +437,7 @@ const handleSignUp = () => {
               name="i-lucide-folder-open"
               class="size-8 mx-auto text-muted/50 mb-2"
             />
-            <h5 class="text-sm font-bold text-default mb-1">
+            <h5 class="text-sm font-bold mb-1">
               No documents
             </h5>
             <p class="text-xs text-muted mb-4">

@@ -72,7 +72,7 @@ watch(() => route.hash, (newHash) => {
 <template>
   <div>
     <div class="pt-12 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <h1 class="text-3xl font-bold text-default">
+      <h1 class="text-3xl font-bold">
         Examples
       </h1>
       <p class="mt-2 text-lg text-muted">
@@ -99,7 +99,7 @@ watch(() => route.hash, (newHash) => {
             class="size-5 mb-2 text-muted group-hover:text-primary transition-colors"
             :class="[activeId === example.id && 'text-primary']"
           />
-          <p class="text-sm font-semibold text-default truncate">
+          <p class="text-sm font-semibold truncate">
             {{ example.label }}
           </p>
           <p class="text-xs text-muted mt-1 line-clamp-2">

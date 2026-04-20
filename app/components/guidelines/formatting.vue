@@ -1,7 +1,7 @@
 <template>
   <!-- Formatting -->
   <section>
-    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 text-default">
+    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6">
       <UIcon
         name="i-lucide-scan-text"
         class="size-6 text-primary"

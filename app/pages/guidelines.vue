@@ -6,7 +6,7 @@
         name="i-lucide-book-open"
         class="size-16 text-primary mx-auto mb-4 drop-shadow-sm"
       />
-      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-default">
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
         Design Guidelines
       </h1>
       <p class="text-xl text-muted max-w-2xl mx-auto">
@@ -18,7 +18,7 @@
 
     <!-- Design System Rules & Best Practices -->
     <section>
-      <h2 class="text-2xl font-bold flex items-center gap-2 mb-2 text-default">
+      <h2 class="text-2xl font-bold flex items-center gap-2 mb-4">
         <UIcon
           name="i-lucide-ruler"
           class="size-6 text-primary"
@@ -27,7 +27,7 @@
       </h2>
 
       <p class="text-sm text-muted max-w-4xl mb-4">
-        Always provide immediate visual feedback for all user interactions. Utilize skeletons, loading icons, and progress indicators to clearly communicate system status and assure users that their action has been registered while work completes in the background.
+        These guidelines are base recommendations for consistency and predictability. You can use custom styling for application-specific requirements.
       </p>
 
       <div class="space-y-12">

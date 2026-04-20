@@ -106,7 +106,6 @@ export default defineNuxtConfig({
 Use these everywhere instead of raw palette colors:
 
 ### Text
-- `text-default` — primary body text
 - `text-muted` — secondary text (descriptions, hints)
 - `text-toned` — medium-emphasis text (between muted and default)
 - `text-dimmed` — tertiary text (placeholders, disabled)

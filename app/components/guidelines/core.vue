@@ -35,7 +35,7 @@ function copyToClipboard(text: string, id: string) {
 <template>
   <!-- Core Visual Identity -->
   <section>
-    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 text-default border-b border-default pb-4">
+    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 pb-4">
       <UIcon
         name="i-lucide-palette"
         class="size-6 text-primary"
@@ -48,7 +48,7 @@ function copyToClipboard(text: string, id: string) {
         variant="outline"
         class="bg-elevated/50"
       >
-        <h3 class="text-lg font-bold text-default mb-2 flex items-center gap-2">
+        <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
           <UIcon
             name="i-lucide-swatch-book"
             class="text-primary size-5"
@@ -150,7 +150,7 @@ function copyToClipboard(text: string, id: string) {
         variant="outline"
         class="bg-elevated/50"
       >
-        <h3 class="text-lg font-bold text-default mb-2 flex items-center gap-2">
+        <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
           <UIcon
             name="i-lucide-type"
             class="text-primary size-5"
@@ -206,7 +206,7 @@ function copyToClipboard(text: string, id: string) {
         <h4 class="text-xs font-bold text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
           Usage
         </h4>
-        <p class="text-sm text-default leading-relaxed">
+        <p class="text-sm leading-relaxed">
           Apply using <code>text-{{ selectedGroup.name.toLowerCase() }}</code>, <code>bg-{{ selectedGroup.name.toLowerCase() }}</code>, or <code>border-{{ selectedGroup.name.toLowerCase() }}</code>.
         </p>
         <!-- </div> -->
@@ -243,7 +243,7 @@ function copyToClipboard(text: string, id: string) {
                   <div class="text-[9px] font-bold text-muted uppercase tracking-wider">
                     {{ format.label }}
                   </div>
-                  <div class="text-xs font-mono text-default truncate">
+                  <div class="text-xs font-mono truncate">
                     {{ format.value }}
                   </div>
                 </div>
@@ -287,7 +287,7 @@ function copyToClipboard(text: string, id: string) {
                   <div class="text-[9px] font-bold text-muted uppercase tracking-wider">
                     {{ format.label }}
                   </div>
-                  <div class="text-xs font-mono text-default truncate">
+                  <div class="text-xs font-mono truncate">
                     {{ format.value }}
                   </div>
                 </div>

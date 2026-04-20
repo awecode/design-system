@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
-      <h1 class="text-4xl font-bold tracking-tight text-default sm:text-5xl">
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
         Awecode Design System
       </h1>
       <p class="mt-4 text-xl text-muted max-w-3xl mx-auto">

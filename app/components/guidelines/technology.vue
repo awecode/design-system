@@ -1,7 +1,7 @@
 <template>
   <!-- Technology Stack -->
   <section>
-    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 text-default border-b border-default pb-4">
+    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 pb-4">
       <UIcon
         name="i-lucide-blocks"
         class="size-6 text-primary"
@@ -18,7 +18,7 @@
           name="i-simple-icons-nuxtdotjs"
           class="size-8 text-primary mb-4"
         />
-        <h3 class="text-lg font-bold text-default mb-2">
+        <h3 class="text-lg font-bold mb-2">
           Nuxt UI
         </h3>
         <p class="text-muted text-sm relative z-10">
@@ -35,7 +35,7 @@
           name="i-lucide-sparkles"
           class="size-8 text-primary mb-4"
         />
-        <h3 class="text-lg font-bold text-default mb-2">
+        <h3 class="text-lg font-bold mb-2">
           Lucide Icons
         </h3>
         <p class="text-muted text-sm relative z-10">
@@ -52,7 +52,7 @@
           name="i-lucide-box"
           class="size-8 text-primary mb-4"
         />
-        <h3 class="text-lg font-bold text-default mb-2">
+        <h3 class="text-lg font-bold mb-2">
           Quasar Framework
         </h3>
         <p class="text-muted text-sm relative z-10">

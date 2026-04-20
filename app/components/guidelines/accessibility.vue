@@ -1,7 +1,7 @@
 <template>
   <!-- Advanced Accessibility (a11y) -->
   <section class="space-y-6">
-    <h3 class="text-xl font-bold text-default mb-4 border-b border-default pb-2">
+    <h3 class="text-xl font-bold mb-4 pb-2">
       Accessibility (a11y)
     </h3>
     <div class="grid md:grid-cols-2 gap-6">
@@ -46,7 +46,7 @@
         </p>
         <div class="border-t border-default pt-4 flex flex-col gap-3">
           <div class="space-y-1">
-            <span class="text-xs font-semibold text-default flex items-center gap-1">
+            <span class="text-xs font-semibold flex items-center gap-1">
               <UIcon
                 name="i-lucide-check-circle-2"
                 class="text-success"
@@ -57,7 +57,7 @@
             </code>
           </div>
           <div class="space-y-1">
-            <span class="text-xs font-semibold text-default flex items-center gap-1">
+            <span class="text-xs font-semibold flex items-center gap-1">
               <UIcon
                 name="i-lucide-check-circle-2"
                 class="text-success"

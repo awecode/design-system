@@ -13,7 +13,7 @@ const saveOptions = [
 <template>
   <!-- Buttons & CTAs -->
   <section class="space-y-6">
-    <h3 class="text-xl font-bold text-default mb-4 border-b border-default pb-2">
+    <h3 class="text-xl font-bold mb-4 pb-2">
       Buttons & Call to Actions (CTAs)
     </h3>
     <div class="grid md:grid-cols-2 gap-6">

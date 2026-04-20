@@ -69,7 +69,7 @@ function copyToClipboard(text) {
 
 <template>
   <div class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-    <h1 class="text-3xl font-bold tracking-tight text-default sm:text-4xl mb-2">
+    <h1 class="text-3xl font-bold tracking-tight sm:text-4xl mb-2">
       Configuration
     </h1>
     <p class="text-lg text-muted mb-8">
@@ -80,7 +80,7 @@ function copyToClipboard(text) {
       <!-- main.css Configuration -->
       <div class="rounded-xl border border-default bg-elevated overflow-hidden">
         <div class="flex items-center justify-between px-4 py-3 border-b border-default bg-muted/50">
-          <span class="font-mono text-sm text-default font-medium">assets/css/main.css</span>
+          <span class="font-mono text-sm font-medium">assets/css/main.css</span>
           <UButton
             icon="i-lucide-copy"
             size="sm"
@@ -98,7 +98,7 @@ function copyToClipboard(text) {
       <!-- app.config.ts Configuration -->
       <div class="rounded-xl border border-default bg-elevated overflow-hidden">
         <div class="flex items-center justify-between px-4 py-3 border-b border-default bg-muted/50">
-          <span class="font-mono text-sm text-default font-medium">app.config.ts</span>
+          <span class="font-mono text-sm font-medium">app.config.ts</span>
           <UButton
             icon="i-lucide-copy"
             size="sm"

@@ -1,7 +1,7 @@
 <template>
   <!-- Brand Voice & Naming -->
   <section>
-    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 text-default border-b border-default pb-4">
+    <h2 class="text-2xl font-bold flex items-center gap-2 mb-6 pb-4">
       <UIcon
         name="i-lucide-type"
         class="size-6 text-primary"
@@ -12,7 +12,7 @@
     <div class="grid md:grid-cols-2 gap-8">
       <!-- Dos & Donts block -->
       <div class="space-y-4">
-        <h3 class="text-lg font-semibold text-default">
+        <h3 class="text-lg font-semibold">
           Writing the Brand Name
         </h3>
         <p class="text-muted text-sm">
@@ -47,7 +47,7 @@
           </template>
         </UAlert>
         <div class="rounded-lg border border-default p-5 space-y-3">
-          <h3 class="text-sm font-bold text-default flex items-center gap-2">
+          <h3 class="text-sm font-bold flex items-center gap-2">
             <UIcon
               name="i-lucide-info"
               class="size-5 text-primary"
@@ -87,12 +87,12 @@
                 name="i-lucide-scale"
                 class="size-5 text-primary"
               />
-              <h3 class="font-bold text-default">
+              <h3 class="font-bold">
                 Legal Entities
               </h3>
             </div>
           </template>
-          <p class="text-sm text-default mb-4">
+          <p class="text-sm mb-4">
             Use these exact names on all legal papers, official letters, and financial vouchers:
           </p>
           <ul class="space-y-3">

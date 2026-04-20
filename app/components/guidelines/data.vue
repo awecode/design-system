@@ -50,7 +50,7 @@ const openAsyncModal = () => {
   <!-- Data Loading & Processing -->
   <section class="space-y-6">
     <div>
-      <h3 class="text-xl font-bold text-default mb-3 border-b border-default pb-2">
+      <h3 class="text-xl font-bold mb-4 pb-2">
         Data Loading & Processing
       </h3>
       <p class="text-sm text-muted max-w-4xl">
@@ -189,7 +189,7 @@ const openAsyncModal = () => {
                 <!-- Loaded Content -->
                 <div
                   v-else
-                  class="text-sm text-default py-2"
+                  class="text-sm py-2"
                 >
                   <p>Here is the dynamically loaded data for this specific record. The modal opened instantly, providing immediate feedback before the data arrived.</p>
                 </div>

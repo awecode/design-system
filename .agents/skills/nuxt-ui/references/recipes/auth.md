@@ -121,7 +121,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     <UCard class="w-full max-w-sm">
       <template #header>
         <div class="text-center">
-          <h1 class="text-xl font-semibold text-default">Welcome back</h1>
+          <h1 class="text-xl font-semibold">Welcome back</h1>
           <p class="mt-1 text-sm text-muted">Sign in to your account</p>
         </div>
       </template>
