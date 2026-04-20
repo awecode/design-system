@@ -114,6 +114,11 @@ function showToast() {
         <UButton
           label="Destructive"
           color="error"
+          variant="outline"
+        />
+        <UButton
+          label="Destructive Confirmed"
+          color="error"
         />
         <UButton
           label="Loading"

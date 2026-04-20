@@ -111,7 +111,7 @@ const handleSignUp = () => {
             Border Radii
           </h3>
           <p class="text-sm text-muted">
-            We utilize a constrained border-radius scale to maintain a professional yet approachable aesthetic. Our global default is set to <code class="bg-muted/20 px-1 py-0.5 rounded">0.2rem</code> (8px) via the <code class="bg-muted/20 px-1 py-0.5 rounded">--ui-radius</code> variable. This ensures consistency across cards, inputs, and modals.
+            Utilize a constrained border-radius scale to maintain a professional yet approachable aesthetic. With Nuxt UI configuration, the global default is <code class="bg-muted/20 px-1 py-0.5 rounded">0.2rem</code> via the <code class="bg-muted/20 px-1 py-0.5 rounded">--ui-radius</code> variable. Ensure consistency across cards, inputs, and modals.
           </p>
         </UCard>
 

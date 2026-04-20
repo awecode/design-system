@@ -225,6 +225,10 @@ const tailwindThemeCss = `@import "tailwindcss";
   body {
     @apply bg-background text-foreground;
   }
+}
+
+h1, h2, h3 {
+  @apply font-serif;
 }`
 
 const nuxtAppConfig = `export default defineAppConfig({

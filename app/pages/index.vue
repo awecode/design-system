@@ -32,22 +32,6 @@
           variant="outline"
         />
         <UButton
-          to="/examples"
-          label="Examples"
-          icon="i-lucide-layers"
-          size="lg"
-          color="neutral"
-          variant="outline"
-        />
-        <UButton
-          to="/kitchen-sink"
-          label="Kitchen Sink"
-          icon="i-lucide-component"
-          size="lg"
-          color="neutral"
-          variant="outline"
-        />
-        <UButton
           to="https://awecode.com/brand-guidelines"
           target="_blank"
           label="Brand Assets"
@@ -56,6 +40,29 @@
           color="neutral"
           variant="outline"
         />
+      </div>
+
+      <div class="mt-10 flex justify-center gap-x-8">
+        <ULink
+          to="/examples"
+          class="text-sm font-medium text-muted hover:text-primary flex items-center gap-2 transition-colors group"
+        >
+          <UIcon
+            name="i-lucide-layers"
+            class="size-4 opacity-50 group-hover:opacity-100"
+          />
+          Examples
+        </ULink>
+        <ULink
+          to="/kitchen-sink"
+          class="text-sm font-medium text-muted hover:text-primary flex items-center gap-2 transition-colors group"
+        >
+          <UIcon
+            name="i-lucide-component"
+            class="size-4 opacity-50 group-hover:opacity-100"
+          />
+          Kitchen Sink
+        </ULink>
       </div>
     </div>
 
