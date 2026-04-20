@@ -61,8 +61,8 @@ const openAsyncModal = () => {
     <div class="grid md:grid-cols-2 gap-6">
       <!-- SWR & Caching -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -78,8 +78,8 @@ const openAsyncModal = () => {
 
       <!-- Skeleton & Initial Load -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -104,8 +104,8 @@ const openAsyncModal = () => {
 
       <!-- Action Feedback -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -135,8 +135,8 @@ const openAsyncModal = () => {
 
       <!-- Asynchronous Modals -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -201,8 +201,8 @@ const openAsyncModal = () => {
 
       <!-- Debouncing -->
       <UCard
-        variant="outline"
-        class="col-span-1 md:col-span-2 bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="col-span-1 md:col-span-2 flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon

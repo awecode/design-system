@@ -19,8 +19,8 @@ const saveOptions = [
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Primary vs Secondary -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -48,8 +48,8 @@ const saveOptions = [
 
       <!-- Ghost Variant -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -77,8 +77,8 @@ const saveOptions = [
 
       <!-- Dropdown Actions -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -115,8 +115,8 @@ const saveOptions = [
 
       <!-- Icon Buttons -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon

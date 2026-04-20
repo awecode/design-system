@@ -45,8 +45,7 @@ function copyToClipboard(text: string, id: string) {
 
     <div class="grid md:grid-cols-2 gap-6">
       <UCard
-        variant="outline"
-        class="bg-elevated/50"
+        variant="subtle"
       >
         <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -147,8 +146,7 @@ function copyToClipboard(text: string, id: string) {
       </UCard>
 
       <UCard
-        variant="outline"
-        class="bg-elevated/50"
+        variant="subtle"
       >
         <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
           <UIcon

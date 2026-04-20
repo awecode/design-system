@@ -30,8 +30,7 @@ const handleSignUp = () => {
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Spacing Scale -->
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -47,8 +46,7 @@ const handleSignUp = () => {
 
         <!-- Z-Index -->
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -78,8 +76,7 @@ const handleSignUp = () => {
 
         <!-- Max Widths -->
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -104,8 +101,7 @@ const handleSignUp = () => {
         </UCard>
 
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -120,8 +116,7 @@ const handleSignUp = () => {
         </UCard>
 
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -146,8 +141,7 @@ const handleSignUp = () => {
       </h3>
       <div class="grid md:grid-cols-2 gap-6">
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -195,8 +189,7 @@ const handleSignUp = () => {
         </UCard>
 
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -232,8 +225,7 @@ const handleSignUp = () => {
         </UCard>
 
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -246,29 +238,6 @@ const handleSignUp = () => {
             When handling long text in constrained spaces (like table cells or small cards), use a single-line text ellipsis paired with a tooltip to reveal the full content on hover. Wrap text to the next line only in dedicated detail views or expansive prose areas.
           </p>
         </UCard>
-
-        <UCard
-          variant="subtle"
-          class="col-span-1 md:col-span-2"
-        >
-          <h4 class="font-bold mb-2 flex items-center gap-2">
-            <UIcon
-              name="i-lucide-message-square"
-              class="text-primary"
-            /> Icons & Tooltips
-          </h4>
-          <p class="text-sm text-muted mb-3">
-            Use a tooltip for icons without text. Include an `aria-label` to suggest screen readers what the icon does.
-          </p>
-          <UTooltip text="Settings">
-            <UButton
-              icon="i-lucide-settings"
-              aria-label="Settings"
-              color="neutral"
-              variant="ghost"
-            />
-          </UTooltip>
-        </UCard>
       </div>
     </section>
 
@@ -280,8 +249,7 @@ const handleSignUp = () => {
       <div class="grid md:grid-cols-2 gap-6">
         <div>
           <UCard
-            variant="outline"
-            class="bg-elevated/50"
+            variant="subtle"
           >
             <h4 class="font-bold mb-2 flex items-center gap-2">
               <UIcon
@@ -295,8 +263,8 @@ const handleSignUp = () => {
           </UCard>
 
           <UCard
-            variant="outline"
-            class="bg-elevated/50 mt-4"
+            variant="subtle"
+            class="mt-4"
           >
             <h4 class="font-bold mb-2 flex items-center gap-2">
               <UIcon
@@ -339,8 +307,7 @@ const handleSignUp = () => {
         </div>
 
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -419,8 +386,7 @@ const handleSignUp = () => {
         </UCard>
 
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon
@@ -454,8 +420,7 @@ const handleSignUp = () => {
         </UCard>
 
         <UCard
-          variant="outline"
-          class="bg-elevated/50"
+          variant="subtle"
         >
           <h4 class="font-bold mb-2 flex items-center gap-2">
             <UIcon

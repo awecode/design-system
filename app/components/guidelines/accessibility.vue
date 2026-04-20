@@ -7,8 +7,8 @@
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Focus States -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -31,8 +31,8 @@
 
       <!-- Alt Text -->
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold mb-2 flex items-center gap-2">
           <UIcon
@@ -71,8 +71,8 @@
       </UCard>
 
       <UCard
-        variant="outline"
-        class="bg-elevated/50 flex flex-col"
+        variant="subtle"
+        class="flex flex-col"
       >
         <h4 class="font-bold flex items-center gap-2 mb-2">
           <UIcon
@@ -87,6 +87,29 @@
             class="text-primary hover:underline"
           >WCAG 2.1 AA</NuxtLink> contrast requirements, maintaining a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text and UI components in both light and dark modes.
         </p>
+      </UCard>
+
+      <UCard
+        variant="subtle"
+        class="bg-elevated/50 flex flex-col"
+      >
+        <h4 class="font-bold mb-2 flex items-center gap-2">
+          <UIcon
+            name="i-lucide-message-square"
+            class="text-primary"
+          /> Icons & Tooltips
+        </h4>
+        <p class="text-sm text-muted mb-3">
+          Use a tooltip for icons without text. Include an `aria-label` to suggest screen readers what the icon does.
+        </p>
+        <UTooltip text="Settings">
+          <UButton
+            icon="i-lucide-settings"
+            aria-label="Settings"
+            color="neutral"
+            variant="ghost"
+          />
+        </UTooltip>
       </UCard>
     </div>
   </section>
