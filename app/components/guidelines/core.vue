@@ -161,23 +161,23 @@ function copyToClipboard(text: string, id: string) {
           <p>Our typographic scale is designed for readability and clear hierarchy, utilizing three primary font families:</p>
           <ul class="list-disc list-inside space-y-1">
             <li>
-              <strong>UI & Content:</strong>
+              <strong>UI & Content: </strong>
               <a
                 href="https://fonts.google.com/specimen/PT+Sans"
                 target="_blank"
                 class="text-primary hover:underline"
               >PT Sans</a> (Sans-serif)
             </li>
-            <li>
-              <strong>Headings & Prose:</strong>
+            <li class="font-serif">
+              <strong>Headings & Prose: </strong>
               <a
                 href="https://fonts.google.com/specimen/PT+Serif"
                 target="_blank"
                 class="text-primary hover:underline"
               >PT Serif</a> (Serif)
             </li>
-            <li>
-              <strong>Data & Code:</strong>
+            <li class="font-mono">
+              <strong>Data & Code: </strong>
               <a
                 href="https://fonts.google.com/specimen/Fira+Code"
                 target="_blank"
