@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
 
 const cssContent = `@import "tailwindcss";
@@ -8,25 +8,23 @@ const cssContent = `@import "tailwindcss";
 
 /*
  * Awecode Design System Theme
- * Adapted from tweakcn configuration
- * Primary: Warm terracotta/copper (hue ~39)
+ * Primary: Warm terracotta/copper (OKLCH)
  * Neutral: Warm stone grays (mapped to Tailwind 'stone')
  */
 
-/* Custom primary color palette — warm terracotta/copper */
 @theme static {
-  /* Primary: Awecode brand — warm terracotta/copper, hue ~39 */
-  --color-awecode-50: oklch(0.9700 0.0120 39.00);
-  --color-awecode-100: oklch(0.9350 0.0250 39.00);
-  --color-awecode-200: oklch(0.8800 0.0450 39.00);
-  --color-awecode-300: oklch(0.8100 0.0620 39.00);
-  --color-awecode-400: oklch(0.7300 0.0780 39.00);
-  --color-awecode-500: oklch(0.6082 0.0835 38.91);
-  --color-awecode-600: oklch(0.5400 0.0850 38.90);
-  --color-awecode-700: oklch(0.4700 0.0750 38.90);
-  --color-awecode-800: oklch(0.3900 0.0620 38.90);
-  --color-awecode-900: oklch(0.3200 0.0480 38.90);
-  --color-awecode-950: oklch(0.2500 0.0350 38.90);
+  /* Primary: Awecode brand color scale */
+  --color-awecode-50: oklch(0.958 0.009 34.44);
+  --color-awecode-100: oklch(0.924 0.017 31.16);
+  --color-awecode-200: oklch(0.841 0.041 33.45);
+  --color-awecode-300: oklch(0.766 0.067 33.93);
+  --color-awecode-400: oklch(0.69 0.096 36.79);
+  --color-awecode-500: oklch(0.607 0.084 36.93);
+  --color-awecode-600: oklch(0.517 0.072 37.14);
+  --color-awecode-700: oklch(0.419 0.059 36.12);
+  --color-awecode-800: oklch(0.323 0.046 36.17);
+  --color-awecode-900: oklch(0.237 0.033 38.28);
+  --color-awecode-950: oklch(0.178 0.025 32.76);
 
   /* Fonts */
   --font-sans: 'PT Sans', ui-sans-serif, sans-serif, system-ui;
@@ -38,7 +36,6 @@ const cssContent = `@import "tailwindcss";
 :root {
   --ui-radius: 0.2rem;
 
-  /* Shadow overrides matching the tweakcn config */
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
   --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
@@ -58,12 +55,37 @@ const configContent = `export default defineAppConfig({
   }
 })`
 
+const items = [
+  {
+    slot: 'tailwind',
+    label: 'Tailwind (v4)',
+    icon: 'i-simple-icons-tailwindcss',
+    file: 'assets/css/main.css',
+    content: cssContent,
+    instructions: 'Please apply the following Awecode Design System tokens to the tailwind configuration. Ensure all OKLCH values and font families are correctly defined in your main CSS file.'
+  },
+  {
+    slot: 'nuxtui',
+    label: 'Nuxt UI',
+    icon: 'i-simple-icons-nuxtdotjs',
+    file: 'app.config.ts',
+    content: configContent,
+    instructions: 'Configure Nuxt UI to use the Awecode brand colors. Set primary to "awecode" and neutral to "stone" in your app.config.ts.'
+  }
+]
+
 const { copy } = useClipboard()
 const toast = useToast()
 
-function copyToClipboard(text) {
+function copyToClipboard(text: string) {
   copy(text)
   toast.add({ title: 'Copied to clipboard!', color: 'success' })
+}
+
+function copyForAgent(content: string, instructions: string) {
+  const text = `${content}\n\n---\nINSTRUCTIONS FOR AGENT:\n${instructions}`
+  copy(text)
+  toast.add({ title: 'Copied for Agent!', description: 'Included code and instructions.', color: 'primary' })
 }
 </script>
 
@@ -76,42 +98,42 @@ function copyToClipboard(text) {
       Copy these configuration files to use the Awecode design system in your Nuxt project.
     </p>
 
-    <div class="space-y-8">
-      <!-- main.css Configuration -->
-      <div class="rounded-xl border border-default bg-elevated overflow-hidden">
-        <div class="flex items-center justify-between px-4 py-3 border-b border-default bg-muted/50">
-          <span class="font-mono text-sm font-medium">assets/css/main.css</span>
-          <UButton
-            icon="i-lucide-copy"
-            size="sm"
-            color="neutral"
-            variant="ghost"
-            label="Copy"
-            @click="copyToClipboard(cssContent)"
-          />
+    <UTabs
+      :items="items"
+      class="w-full"
+    >
+      <template
+        v-for="item in items"
+        :key="item.slot"
+        #[item.slot]="{ item: currentItem }"
+      >
+        <div class="rounded-xl border border-default bg-elevated overflow-hidden mt-4">
+          <div class="flex items-center justify-between px-4 py-3 border-b border-default bg-muted/50">
+            <span class="font-mono text-sm font-medium">{{ currentItem.file }}</span>
+            <div class="flex gap-2">
+              <UButton
+                icon="i-lucide-bot"
+                size="sm"
+                color="primary"
+                variant="subtle"
+                label="Copy for Agent"
+                @click="copyForAgent(currentItem.content, currentItem.instructions)"
+              />
+              <UButton
+                icon="i-lucide-copy"
+                size="sm"
+                color="neutral"
+                variant="subtle"
+                label="Copy Code"
+                @click="copyToClipboard(currentItem.content)"
+              />
+            </div>
+          </div>
+          <div class="p-4 overflow-auto max-h-[600px] bg-zinc-950 dark:bg-zinc-950/50">
+            <pre class="text-sm font-mono text-gray-300 whitespace-pre overflow-x-auto"><code>{{ currentItem.content }}</code></pre>
+          </div>
         </div>
-        <div class="p-4 overflow-auto max-h-[500px] bg-zinc-950 dark:bg-zinc-950/50">
-          <pre><code class="text-sm font-mono text-gray-300">{{ cssContent }}</code></pre>
-        </div>
-      </div>
-
-      <!-- app.config.ts Configuration -->
-      <div class="rounded-xl border border-default bg-elevated overflow-hidden">
-        <div class="flex items-center justify-between px-4 py-3 border-b border-default bg-muted/50">
-          <span class="font-mono text-sm font-medium">app.config.ts</span>
-          <UButton
-            icon="i-lucide-copy"
-            size="sm"
-            color="neutral"
-            variant="ghost"
-            label="Copy"
-            @click="copyToClipboard(configContent)"
-          />
-        </div>
-        <div class="p-4 overflow-auto bg-zinc-950 dark:bg-zinc-950/50">
-          <pre><code class="text-sm font-mono text-gray-300">{{ configContent }}</code></pre>
-        </div>
-      </div>
-    </div>
+      </template>
+    </UTabs>
   </div>
 </template>
