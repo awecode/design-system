@@ -79,38 +79,6 @@
           <p>Base font size is <code class="bg-muted/20 px-1 py-0.5 rounded">16px</code> with a <code class="bg-muted/20 px-1 py-0.5 rounded">1.5</code> line height. Headings should be strictly bold (700 or 800 weight).</p>
         </div>
       </UCard>
-
-      <UCard
-        variant="outline"
-        class="bg-elevated/50"
-      >
-        <h3 class="text-lg font-bold text-default mb-2 flex items-center gap-2">
-          <UIcon
-            name="i-lucide-scaling"
-            class="text-primary size-5"
-          />
-          Border Radii
-        </h3>
-        <p class="text-sm text-muted">
-          We utilize a constrained border-radius scale to maintain a professional yet approachable aesthetic. Our global default is set to <code class="bg-muted/20 px-1 py-0.5 rounded">0.2rem</code> (8px) via the <code class="bg-muted/20 px-1 py-0.5 rounded">--ui-radius</code> variable. This ensures consistency across cards, inputs, and modals.
-        </p>
-      </UCard>
-
-      <UCard
-        variant="outline"
-        class="bg-elevated/50"
-      >
-        <h3 class="text-lg font-bold text-default mb-2 flex items-center gap-2">
-          <UIcon
-            name="i-lucide-layers"
-            class="text-primary size-5"
-          />
-          Shadows & Elevations
-        </h3>
-        <p class="text-sm text-muted">
-          Depth is established using custom, softer tweaked shadows (low opacity, diffuse spread) to dictate the z-axis hierarchy. Use <code class="bg-muted/20 px-1 py-0.5 rounded">shadow-sm</code> for standard cards, <code class="bg-muted/20 px-1 py-0.5 rounded">shadow-md</code> for dropdowns and popovers, and <code class="bg-muted/20 px-1 py-0.5 rounded">shadow-xl</code> for blocking overlays like modals.
-        </p>
-      </UCard>
     </div>
   </section>
 </template>
