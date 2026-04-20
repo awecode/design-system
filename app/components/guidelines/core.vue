@@ -1,58 +1,24 @@
 <script setup lang="ts">
 const isOpen = ref(false)
 
-const lightColors = [
-  { name: 'Primary (500)', class: 'bg-primary-500', hex: '#ae6937', tailwind: 'primary-500' },
-  { name: 'Neutral (Stone 400)', class: 'bg-neutral-400', hex: '#a8a29e', tailwind: 'stone-400' },
-  { name: 'Success (500)', class: 'bg-emerald-500', hex: '#10b981', tailwind: 'emerald-500' },
-  { name: 'Warning (500)', class: 'bg-amber-500', hex: '#f59e0b', tailwind: 'amber-500' },
-  { name: 'Error (500)', class: 'bg-rose-500', hex: '#f43f5e', tailwind: 'rose-500' },
-  { name: 'Info (500)', class: 'bg-blue-500', hex: '#3b82f6', tailwind: 'blue-500' }
-]
-
-const darkColors = [
-  { name: 'Primary (400)', class: 'bg-primary-400', hex: '#d1926b', tailwind: 'primary-400' },
-  { name: 'Neutral (Stone 600)', class: 'bg-stone-600', hex: '#57534e', tailwind: 'stone-600' },
-  { name: 'Success (400)', class: 'bg-emerald-400', hex: '#34d399', tailwind: 'emerald-400' },
-  { name: 'Warning (400)', class: 'bg-amber-400', hex: '#fbbf24', tailwind: 'amber-400' },
-  { name: 'Error (400)', class: 'bg-rose-400', hex: '#fb7185', tailwind: 'rose-400' },
-  { name: 'Info (400)', class: 'bg-blue-400', hex: '#60a5fa', tailwind: 'blue-400' }
-]
-
 const colors = {
   Primary: {
     name: 'Primary',
     description: 'Terracotta/copper (hue ~39)',
-    usage: 'Apply using `text-primary`, `bg-primary`, or `border-primary`.',
     lightName: 'primary-500',
     darkName: 'primary-400',
     lightHex: '#ae6937',
     darkHex: '#d1926b',
     lightOklch: 'oklch(0.6082 0.0835 38.91)',
     darkOklch: 'oklch(0.7082 0.0835 38.91)'
-  },
-  Neutral: {
-    name: 'Neutral',
-    description: 'Warm stone gray',
-    usage: 'Apply using `text-neutral`, `bg-neutral`, or `border-neutral`.',
-    lightName: 'neutral-400',
-    darkName: 'neutral-600',
-    lightHex: '#a8a29e',
-    darkHex: '#57534e',
-    lightOklch: 'oklch(0.6082 0.0835 38.91)',
-    darkOklch: 'oklch(0.6082 0.0835 38.91)'
   }
 }
 
-const selectedGroup = ref<any>(null)
+const selectedGroup = ref(colors.Primary)
 
-function handleColorClick(colorName: string) {
-  const baseName = colorName.split(' ')[0] as keyof typeof colors
-  const group = colors[baseName]
-  if (group) {
-    selectedGroup.value = group
-    isOpen.value = true
-  }
+function openPrimaryModal() {
+  selectedGroup.value = colors.Primary
+  isOpen.value = true
 }
 
 const copied = ref<string | null>(null)
@@ -105,21 +71,31 @@ function copyToClipboard(text: string, id: string) {
             <div class="space-y-4">
               <div class="flex gap-3 items-center">
                 <div
-                  v-for="color in lightColors.slice(0, 2)"
-                  :key="color.name"
-                  :title="color.name"
-                  class="size-8 rounded-full shadow-sm ring-1 ring-inset ring-black/10 cursor-pointer hover:scale-110 transition-transform active:scale-95"
-                  :class="color.class"
-                  @click="handleColorClick(color.name)"
+                  title="Primary (500)"
+                  class="size-8 rounded-full shadow-sm ring-1 ring-inset ring-black/10 cursor-pointer hover:scale-110 transition-transform active:scale-95 bg-primary-500"
+                  @click="openPrimaryModal"
+                />
+                <div
+                  title="Neutral (Stone 400)"
+                  class="size-8 rounded-full bg-neutral-400 shadow-sm ring-1 ring-inset ring-black/10"
                 />
               </div>
               <div class="flex gap-2">
                 <div
-                  v-for="color in lightColors.slice(2)"
-                  :key="color.name"
-                  :title="color.name"
-                  class="size-6 rounded-full shadow-sm ring-1 ring-inset ring-black/10"
-                  :class="color.class"
+                  title="Success (500)"
+                  class="size-6 rounded-full bg-emerald-500 shadow-sm ring-1 ring-inset ring-black/10"
+                />
+                <div
+                  title="Warning (500)"
+                  class="size-6 rounded-full bg-amber-500 shadow-sm ring-1 ring-inset ring-black/10"
+                />
+                <div
+                  title="Error (500)"
+                  class="size-6 rounded-full bg-rose-500 shadow-sm ring-1 ring-inset ring-black/10"
+                />
+                <div
+                  title="Info (500)"
+                  class="size-6 rounded-full bg-blue-500 shadow-sm ring-1 ring-inset ring-black/10"
                 />
               </div>
             </div>
@@ -137,21 +113,31 @@ function copyToClipboard(text: string, id: string) {
             <div class="space-y-4">
               <div class="flex gap-3 items-center">
                 <div
-                  v-for="color in darkColors.slice(0, 2)"
-                  :key="color.name"
-                  :title="color.name"
-                  class="size-8 rounded-full shadow-sm ring-1 ring-inset ring-white/10 cursor-pointer hover:scale-110 transition-transform active:scale-95"
-                  :class="color.class"
-                  @click="handleColorClick(color.name)"
+                  title="Primary (400)"
+                  class="size-8 rounded-full shadow-sm ring-1 ring-inset ring-white/10 cursor-pointer hover:scale-110 transition-transform active:scale-95 bg-primary-400"
+                  @click="openPrimaryModal"
+                />
+                <div
+                  title="Neutral (Stone 600)"
+                  class="size-8 rounded-full bg-stone-600 shadow-sm ring-1 ring-inset ring-white/10"
                 />
               </div>
               <div class="flex gap-2">
                 <div
-                  v-for="color in darkColors.slice(2)"
-                  :key="color.name"
-                  :title="color.name"
-                  class="size-6 rounded-full shadow-sm ring-1 ring-inset ring-white/10"
-                  :class="color.class"
+                  title="Success (400)"
+                  class="size-6 rounded-full bg-emerald-400 shadow-sm ring-1 ring-inset ring-white/10"
+                />
+                <div
+                  title="Warning (400)"
+                  class="size-6 rounded-full bg-amber-400 shadow-sm ring-1 ring-inset ring-white/10"
+                />
+                <div
+                  title="Error (400)"
+                  class="size-6 rounded-full bg-rose-400 shadow-sm ring-1 ring-inset ring-white/10"
+                />
+                <div
+                  title="Info (400)"
+                  class="size-6 rounded-full bg-blue-400 shadow-sm ring-1 ring-inset ring-white/10"
                 />
               </div>
             </div>
@@ -216,16 +202,11 @@ function copyToClipboard(text: string, id: string) {
         class="space-y-8"
       >
         <!-- Usage Guide -->
-        <!-- <div class="bg-primary-50/50 dark:bg-primary-950/20 border border-primary-200 dark:border-primary-800 rounded-lg p-4"> -->
         <h4 class="text-xs font-bold text-primary uppercase tracking-wider mb-2 flex items-center gap-1.5">
-          <UIcon
-            name="i-lucide-info"
-            class="size-3.5"
-          />
           Usage
         </h4>
         <p class="text-sm text-default leading-relaxed">
-          {{ selectedGroup.usage }}
+          Apply using <code>text-{{ selectedGroup.name.toLowerCase() }}</code>, <code>bg-{{ selectedGroup.name.toLowerCase() }}</code>, or <code>border-{{ selectedGroup.name.toLowerCase() }}</code>.
         </p>
         <!-- </div> -->
 
